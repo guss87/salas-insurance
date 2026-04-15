@@ -1,7 +1,12 @@
 // ═══════════════════════════════════════════════════════════
 // SALAS INSURANCE GROUP — main.js
-// Bilingual (ES/EN) + WhatsApp form + animations
+// Bilingual ES/EN + Google Sheets leads + WhatsApp + animations
 // ═══════════════════════════════════════════════════════════
+
+// ── GOOGLE SHEETS WEBHOOK URL ──
+// Paste your Apps Script Web App URL here after deploying it.
+// Instructions in: google-sheets-setup.md
+const SHEETS_WEBHOOK_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
 
 // ── SCROLL TO CONTACT ──
 function scrollToContact() {
@@ -32,7 +37,6 @@ if (hamburger && nav) {
 
 // ══════════════════════════════════════════════
 // BILINGUAL ENGINE — ES ↔ EN
-// Uses data-es / data-en attributes on elements
 // ══════════════════════════════════════════════
 
 let currentLang = 'es';
@@ -42,48 +46,37 @@ function applyLanguage(lang) {
   document.documentElement.setAttribute('lang', lang === 'es' ? 'es' : 'en');
   document.documentElement.setAttribute('data-lang', lang);
 
-  // Update toggle UI
   document.querySelectorAll('.lang-option').forEach(opt => {
     opt.classList.toggle('active', opt.classList.contains(`lang-${lang}`));
   });
 
-  // Translate all data-es / data-en text nodes
   document.querySelectorAll('[data-es][data-en]').forEach(el => {
     const text = lang === 'es' ? el.getAttribute('data-es') : el.getAttribute('data-en');
     if (!text) return;
-
-    // If it contains HTML tags, use innerHTML
     if (text.includes('<') || text.includes('&')) {
       el.innerHTML = text;
     } else {
-      // Only set textContent for leaf-text nodes that have no important children
-      // (check if the element has child elements we should preserve)
       if (el.children.length === 0) {
         el.textContent = text;
       } else {
-        // For elements with children (e.g. h1 with <em>), use innerHTML
         el.innerHTML = text;
       }
     }
   });
 
-  // Translate placeholder attributes
   document.querySelectorAll('[data-es-placeholder][data-en-placeholder]').forEach(el => {
     el.placeholder = lang === 'es'
       ? el.getAttribute('data-es-placeholder')
       : el.getAttribute('data-en-placeholder');
   });
 
-  // Translate select options with data-es / data-en
   document.querySelectorAll('select option[data-es][data-en]').forEach(opt => {
     opt.textContent = lang === 'es' ? opt.getAttribute('data-es') : opt.getAttribute('data-en');
   });
 
-  // Update hidden lang field in form
   const langField = document.getElementById('lang_pref');
   if (langField) langField.value = lang;
 
-  // Update WhatsApp FAB link based on language
   const fab = document.getElementById('whatsappFab');
   if (fab) {
     const msgEs = 'Hola%20Fernando%2C%20me%20interesa%20obtener%20informaci%C3%B3n%20sobre%20seguros%20de%20salud.';
@@ -91,13 +84,11 @@ function applyLanguage(lang) {
     fab.href = `https://wa.me/19293969920?text=${lang === 'es' ? msgEs : msgEn}`;
   }
 
-  // Update page title
   document.title = lang === 'es'
     ? 'Salas Insurance Group – Tu Seguro de Salud en USA'
     : 'Salas Insurance Group – Your Health Insurance in USA';
 }
 
-// Toggle click
 const langToggle = document.getElementById('langToggle');
 if (langToggle) {
   langToggle.addEventListener('click', () => {
@@ -105,36 +96,35 @@ if (langToggle) {
   });
 }
 
-// Init default
 applyLanguage('es');
 
 // ══════════════════════════════════════════════
-// CONTACT FORM → WhatsApp
-// Captures preferred language in message
+// CONTACT FORM → Google Sheets + WhatsApp
 // ══════════════════════════════════════════════
 
-const form = document.getElementById('contactForm');
+const form       = document.getElementById('contactForm');
 const successMsg = document.getElementById('formSuccess');
+const submitBtn  = form ? form.querySelector('.form-submit') : null;
 
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const nombre   = (form.nombre?.value || '').trim();
+    const nombre   = (form.nombre?.value   || '').trim();
     const telefono = (form.telefono?.value || '').trim();
-    const email    = (form.email?.value || '').trim();
-    const estado   = form.estado?.value || '';
-    const seguro   = form.seguro?.value || '';
+    const email    = (form.email?.value    || '').trim();
+    const estado   = form.estado?.value   || '';
+    const seguro   = form.seguro?.value   || '';
     const personas = form.personas?.value || '';
     const mensaje  = (form.mensaje?.value || '').trim();
     const langPref = form.lang_pref?.value || 'es';
 
     // Validation
     const required = [
-      { el: form.nombre, val: nombre },
+      { el: form.nombre,   val: nombre },
       { el: form.telefono, val: telefono },
-      { el: form.estado, val: estado },
-      { el: form.seguro, val: seguro },
+      { el: form.estado,   val: estado },
+      { el: form.seguro,   val: seguro },
     ];
     let hasError = false;
     required.forEach(({ el, val }) => {
@@ -146,7 +136,43 @@ if (form) {
     });
     if (hasError) return;
 
-    // Build WhatsApp message (bilingual-aware)
+    // ── LOADING STATE ──
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      submitBtn.textContent = langPref === 'es' ? 'Enviando...' : 'Sending...';
+    }
+
+    // ── SEND TO GOOGLE SHEETS ──
+    const leadData = {
+      timestamp:  new Date().toLocaleString('es-US', { timeZone: 'America/New_York' }),
+      nombre,
+      telefono,
+      email:      email || '—',
+      estado,
+      seguro,
+      personas,
+      mensaje:    mensaje || '—',
+      idioma:     langPref === 'es' ? 'Español' : 'English',
+      fuente:     'Sitio Web'
+    };
+
+    // Fire and forget — don't block UX on Sheets success
+    if (SHEETS_WEBHOOK_URL && SHEETS_WEBHOOK_URL !== 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+      try {
+        await fetch(SHEETS_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Apps Script requires no-cors
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(leadData)
+        });
+      } catch (err) {
+        // Silent fail — WhatsApp is the backup
+        console.warn('Sheets submission failed:', err);
+      }
+    }
+
+    // ── BUILD WHATSAPP MESSAGE ──
     let msg;
     if (langPref === 'en') {
       msg = [
@@ -155,12 +181,11 @@ if (form) {
         `📋 *My information:*`,
         `• Name: ${nombre}`,
         `• Phone: ${telefono}`,
-        email ? `• Email: ${email}` : '',
+        email    ? `• Email: ${email}`       : '',
         `• State: ${estado}`,
         `• Insurance type: ${seguro}`,
         `• Coverage for: ${personas}`,
-        mensaje ? `• Message: ${mensaje}` : '',
-        ``,
+        mensaje  ? `• Message: ${mensaje}`   : '',
         `• Preferred language: English`,
       ].filter(Boolean).join('\n');
     } else {
@@ -170,43 +195,41 @@ if (form) {
         `📋 *Mis datos:*`,
         `• Nombre: ${nombre}`,
         `• Teléfono: ${telefono}`,
-        email ? `• Email: ${email}` : '',
+        email    ? `• Email: ${email}`       : '',
         `• Estado: ${estado}`,
         `• Tipo de seguro: ${seguro}`,
         `• Personas a cubrir: ${personas}`,
-        mensaje ? `• Mensaje: ${mensaje}` : '',
-        ``,
+        mensaje  ? `• Mensaje: ${mensaje}`   : '',
         `• Idioma preferido: Español`,
       ].filter(Boolean).join('\n');
     }
 
     const waUrl = `https://wa.me/19293969920?text=${encodeURIComponent(msg)}`;
 
-    // Show success
+    // ── SHOW SUCCESS + OPEN WHATSAPP ──
     form.style.display = 'none';
     successMsg.style.display = 'block';
-
     setTimeout(() => { window.open(waUrl, '_blank'); }, 400);
   });
 }
 
 // ── SCROLL REVEAL ──
 const revealEls = document.querySelectorAll(
-  '.service-card, .step, .testimonial-card, .why-feature, .carrier-logo, .why-photo-wrap'
+  '.service-card, .step, .testimonial-card, .why-feature, .carrier-logo, .why-photo-wrap, .doctor-card'
 );
 const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
       entry.target.style.transform = 'translateY(0)';
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 
 revealEls.forEach((el, i) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(22px)';
-  el.style.transition = `opacity 0.5s ease ${i * 0.055}s, transform 0.5s ease ${i * 0.055}s`;
+  el.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
   revealObserver.observe(el);
 });
