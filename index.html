@@ -13,6 +13,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ═══ META / FACEBOOK PIXEL ═══
+       Para activar:
+       1. Ve a business.facebook.com → Events Manager → Pixels
+       2. Crea un pixel nuevo → Copia tu Pixel ID (es un número de 15-16 dígitos)
+       3. Reemplaza PASTE_YOUR_PIXEL_ID_HERE con ese número
+       4. Haz git push — el pixel empieza a trackear inmediatamente
+  ═══ -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+    var META_PIXEL_ID = 'PASTE_YOUR_PIXEL_ID_HERE';
+    if (META_PIXEL_ID !== 'PASTE_YOUR_PIXEL_ID_HERE') {
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+      // Lead event is fired from main.js on form submit
+    }
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=PASTE_YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel -->
+
 </head>
 <body>
 
@@ -36,6 +67,8 @@
         <a href="#aseguradoras" data-es="Aseguradoras" data-en="Carriers">Aseguradoras</a>
         <a href="#testimonioss" data-es="Testimonios" data-en="Reviews">Testimonios</a>
         <a href="#medicos" data-es="Busca Tu Médico" data-en="Find a Doctor">Busca Tu Médico</a>
+        <a href="#referidos" data-es="Referidos" data-en="Referrals">Referidos</a>
+        <a href="#faq" data-es="Preguntas" data-en="FAQ">Preguntas</a>
         <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
       </nav>
 
@@ -527,6 +560,212 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GALERÍA ═══ -->
+  <section class="section section--soft" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-es="Para Ti y Tu Familia" data-en="For You and Your Family">Para Ti y Tu Familia</p>
+        <h2 class="section-title" data-es="Protección para cada etapa de tu vida" data-en="Protection for every stage of your life">Protección para cada etapa de tu vida</h2>
+        <p class="section-desc" data-es="Desde los primeros años de tus hijos hasta el retiro — Fernando tiene el plan correcto para cada momento." data-en="From your children's early years to retirement — Fernando has the right plan for every moment.">Desde los primeros años de tus hijos hasta el retiro — Fernando tiene el plan correcto para cada momento.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card gallery-card--large">
+          <img src="img-familia.jpg" alt="Familia latina protegida con seguro de salud" class="gallery-img" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-tag" data-es="Seguro Familiar" data-en="Family Insurance">Seguro Familiar</span>
+            <h3 data-es="Tu familia, protegida" data-en="Your family, protected">Tu familia, protegida</h3>
+            <p data-es="Planes ACA desde $0/mes para toda la familia." data-en="ACA plans from $0/month for the whole family.">Planes ACA desde $0/mes para toda la familia.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="img-medicare.jpg" alt="Pareja de adultos mayores con cobertura Medicare" class="gallery-img" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-tag" data-es="Medicare" data-en="Medicare">Medicare</span>
+            <h3 data-es="El retiro que mereces" data-en="The retirement you deserve">El retiro que mereces</h3>
+            <p data-es="Cobertura completa para mayores de 65 años." data-en="Full coverage for those 65+.">Cobertura completa para mayores de 65 años.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="img-dental.jpg" alt="Sonrisa saludable con seguro dental" class="gallery-img" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-tag" data-es="Dental" data-en="Dental">Dental</span>
+            <h3 data-es="Sonríe sin preocupaciones" data-en="Smile without worry">Sonríe sin preocupaciones</h3>
+            <p data-es="Planes dentales accesibles para toda la familia." data-en="Affordable dental plans for the whole family.">Planes dentales accesibles para toda la familia.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="img-vision.jpg" alt="Examen de visión con optometrista" class="gallery-img" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-tag" data-es="Visión" data-en="Vision">Visión</span>
+            <h3 data-es="Ve el mundo claramente" data-en="See the world clearly">Ve el mundo claramente</h3>
+            <p data-es="Exámenes y lentes cubiertos con tu plan de visión." data-en="Eye exams and glasses covered with your vision plan.">Exámenes y lentes cubiertos con tu plan de visión.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gallery-cta">
+        <button class="btn btn-primary btn-lg" onclick="scrollToContact()">
+          <span data-es="Quiero un plan para mi familia →" data-en="I want a plan for my family →">Quiero un plan para mi familia →</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ REFERIDOS ═══ -->
+  <section class="section section--navy" id="referidos">
+    <div class="container">
+      <div class="referral-grid">
+        <div class="referral-content">
+          <p class="section-eyebrow" style="color:#C9A84C" data-es="Programa de Referidos" data-en="Referral Program">Programa de Referidos</p>
+          <h2 class="section-title" style="color:#fff">
+            <span data-es="Refiere a un amigo y <em>gana recompensas</em>" data-en="Refer a friend and <em>earn rewards</em>">Refiere a un amigo y <em>gana recompensas</em></span>
+          </h2>
+          <p style="color:rgba(255,255,255,0.8)" data-es="La mejor publicidad es la de boca en boca. Si tienes un familiar o amigo que necesita seguro, refiérelo a Fernando. Cuando se inscriba en un plan, tú recibes un reconocimiento especial." data-en="The best advertising is word of mouth. If you have a family member or friend who needs insurance, refer them to Fernando. When they enroll in a plan, you receive a special reward.">La mejor publicidad es la de boca en boca. Si tienes un familiar o amigo que necesita seguro, refiérelo a Fernando. Cuando se inscriba en un plan, tú recibes un reconocimiento especial.</p>
+
+          <div class="referral-steps">
+            <div class="referral-step">
+              <div class="referral-step-num">1</div>
+              <div>
+                <strong data-es="Recomienda a Fernando" data-en="Recommend Fernando">Recomienda a Fernando</strong>
+                <p data-es="Díselo a alguien que necesite seguro y compártele el sitio o el número." data-en="Tell someone who needs insurance and share the website or phone number.">Díselo a alguien que necesite seguro y compártele el sitio o el número.</p>
+              </div>
+            </div>
+            <div class="referral-step">
+              <div class="referral-step-num">2</div>
+              <div>
+                <strong data-es="Tu referido se contacta" data-en="Your referral contacts us">Tu referido se contacta</strong>
+                <p data-es="Ellos llaman, escriben por WhatsApp o llenan el formulario. Que mencionen tu nombre." data-en="They call, message on WhatsApp, or fill out the form. They mention your name.">Ellos llaman, escriben por WhatsApp o llenan el formulario. Que mencionen tu nombre.</p>
+              </div>
+            </div>
+            <div class="referral-step">
+              <div class="referral-step-num">3</div>
+              <div>
+                <strong data-es="¡Tú ganas!" data-en="You win!">Tú ganas!</strong>
+                <p data-es="Cuando tu referido se inscribe, Fernando te contacta para darte tu recompensa." data-en="When your referral enrolls, Fernando contacts you to give you your reward.">Cuando tu referido se inscribe, Fernando te contacta para darte tu recompensa.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/19293969920?text=Hola%20Fernando%2C%20quiero%20referir%20a%20alguien%20para%20un%20seguro." target="_blank" rel="noopener" class="btn btn-gold btn-lg" style="margin-top: var(--space-8)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            <span data-es="Quiero referir a alguien" data-en="I want to refer someone">Quiero referir a alguien</span>
+          </a>
+        </div>
+
+        <div class="referral-visual" aria-hidden="true">
+          <div class="referral-card">
+            <div class="referral-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <p class="referral-card-title" data-es="Tu red = Tu negocio" data-en="Your network = Your business">Tu red = Tu negocio</p>
+            <p class="referral-card-desc" data-es="Cada familia que proteges puede traerte otra. El cículo de confianza crece." data-en="Every family you protect can bring you another. The circle of trust grows.">Cada familia que proteges puede traerte otra. El cículo de confianza crece.</p>
+            <div class="referral-stats">
+              <div class="referral-stat">
+                <span class="referral-stat-num">500+</span>
+                <span data-es="Familias atendidas" data-en="Families served">Familias atendidas</span>
+              </div>
+              <div class="referral-stat">
+                <span class="referral-stat-num">★ 5.0</span>
+                <span data-es="Calificación" data-en="Rating">Calificación</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-es="Preguntas Frecuentes" data-en="FAQ">Preguntas Frecuentes</p>
+        <h2 class="section-title" data-es="Todo lo que necesitas saber" data-en="Everything you need to know">Todo lo que necesitas saber</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-es="¿Qué es el ACA / Obamacare?" data-en="What is ACA / Obamacare?">Qué es el ACA / Obamacare?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-es="El ACA (Affordable Care Act), conocido como Obamacare, es una ley que permite a personas y familias obtener seguro médico privado con subsidios del gobierno según sus ingresos. Muchos califican para planes desde $0 al mes." data-en="The ACA (Affordable Care Act), known as Obamacare, is a law that allows individuals and families to get private health insurance with government subsidies based on their income. Many qualify for plans starting at $0/month.">El ACA (Affordable Care Act), conocido como Obamacare, es una ley que permite a personas y familias obtener seguro médico privado con subsidios del gobierno según sus ingresos. Muchos califican para planes desde $0 al mes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-es="¿Cuánto cuesta contratar a Fernando como agente?" data-en="How much does it cost to hire Fernando as an agent?">Cuánto cuesta contratar a Fernando como agente?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-es="Absolutamente nada. Como agente certificado, Fernando recibe su compensación directamente de las aseguradoras. Para ti, su servicio es completamente gratuito, y siempre busca el mejor plan para ti, no el que más le conviene a él." data-en="Absolutely nothing. As a certified agent, Fernando receives his compensation directly from the insurance companies. For you, his service is completely free — and he always finds the best plan for you, not the one that benefits him most.">Absolutamente nada. Como agente certificado, Fernando recibe su compensación directamente de las aseguradoras. Para ti, su servicio es completamente gratuito, y siempre busca el mejor plan para ti, no el que más le conviene a él.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-es="¿Necesito tener estatus migratorio para obtener un seguro?" data-en="Do I need immigration status to get insurance?">¿Necesito tener estatus migratorio para obtener un seguro?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-es="Para los planes ACA del Marketplace, necesitas un estatus migratorio válido. Sin embargo, existen opciones de planes privados disponibles para personas independientemente de su estatus. Fernando puede orientarte sobre cuáles son tus opciones según tu situación específica." data-en="For ACA Marketplace plans, you need a valid immigration status. However, there are private plan options available regardless of immigration status. Fernando can guide you on your options based on your specific situation.">Para los planes ACA del Marketplace, necesitas un estatus migratorio válido. Sin embargo, existen opciones de planes privados disponibles para personas independientemente de su estatus. Fernando puede orientarte sobre cuáles son tus opciones según tu situación específica.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-es="¿Cuándo puedo inscribirme en un seguro?" data-en="When can I enroll in insurance?">¿Cuándo puedo inscribirme en un seguro?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-es="El período de inscripción abierto es de noviembre a enero. Fuera de ese período, puedes calificar para un Período Especial de Inscripción si tienes eventos de vida como: pérdida de empleo, matrimonio, nacimiento de un hijo, mudanza, o cambio de ingresos. Fernando revisa tu situación gratuitamente." data-en="Open enrollment is from November to January. Outside that period, you may qualify for a Special Enrollment Period if you have life events such as: job loss, marriage, birth of a child, moving, or income change. Fernando reviews your situation for free.">El período de inscripción abierto es de noviembre a enero. Fuera de ese período, puedes calificar para un Período Especial de Inscripción si tienes eventos de vida como: pérdida de empleo, matrimonio, nacimiento de un hijo, mudanza, o cambio de ingresos. Fernando revisa tu situación gratuitamente.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-es="¿Qué es Medicare y quién puede acceder?" data-en="What is Medicare and who can access it?">¿Qué es Medicare y quién puede acceder?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-es="Medicare es el programa federal de seguro médico para personas de 65 años o más, o personas menores con ciertas discapacidades. Tiene varias partes: Parte A (hospitales), Parte B (médicos), Parte C (Medicare Advantage) y Parte D (medicamentos). Fernando te explica cuál te conviene." data-en="Medicare is the federal health insurance program for people 65 or older, or younger people with certain disabilities. It has several parts: Part A (hospital), Part B (doctors), Part C (Medicare Advantage), and Part D (prescriptions). Fernando explains which is best for you.">Medicare es el programa federal de seguro médico para personas de 65 años o más, o personas menores con ciertas discapacidades. Tiene varias partes: Parte A (hospitales), Parte B (médicos), Parte C (Medicare Advantage) y Parte D (medicamentos). Fernando te explica cuál te conviene.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-es="¿Qué es el deducible y el copago?" data-en="What is a deductible and copay?">¿Qué es el deducible y el copago?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p data-es="El deducible es la cantidad que pagas antes de que tu seguro empiece a cubrir los gastos. El copago es una cantidad fija que pagas cada vez que visitas al médico (por ejemplo $20 por consulta). Muchos planes preventivos no tienen copago. Fernando te explica todo antes de inscribirte." data-en="The deductible is the amount you pay before your insurance starts covering costs. The copay is a fixed amount you pay each doctor visit (e.g., $20 per visit). Many preventive plans have no copay. Fernando explains everything before you enroll.">El deducible es la cantidad que pagas antes de que tu seguro empiece a cubrir los gastos. El copago es una cantidad fija que pagas cada vez que visitas al médico (por ejemplo $20 por consulta). Muchos planes preventivos no tienen copago. Fernando te explica todo antes de inscribirte.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-cta">
+        <p data-es="¿Tienes otra pregunta? Fernando responde en minutos." data-en="Have another question? Fernando answers in minutes.">¿Tienes otra pregunta? Fernando responde en minutos.</p>
+        <a href="https://wa.me/19293969920" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          <span data-es="Preguntar por WhatsApp" data-en="Ask on WhatsApp">Preguntar por WhatsApp</span>
+        </a>
       </div>
     </div>
   </section>

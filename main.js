@@ -206,6 +206,17 @@ if (form) {
 
     const waUrl = `https://wa.me/19293969920?text=${encodeURIComponent(msg)}`;
 
+    // ── FIRE META PIXEL LEAD EVENT ──
+    try {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', {
+          content_name: seguro || 'Health Insurance',
+          content_category: 'Insurance Lead',
+          currency: 'USD'
+        });
+      }
+    } catch (_) {}
+
     // ── SHOW SUCCESS + OPEN WHATSAPP ──
     form.style.display = 'none';
     successMsg.style.display = 'block';
@@ -213,9 +224,32 @@ if (form) {
   });
 }
 
+// ══════════════════════════════════════════════
+// FAQ ACCORDION
+// ══════════════════════════════════════════════
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    const answer = btn.nextElementSibling;
+
+    // Close all other open items first
+    document.querySelectorAll('.faq-question[aria-expanded="true"]').forEach(other => {
+      if (other !== btn) {
+        other.setAttribute('aria-expanded', 'false');
+        const otherAnswer = other.nextElementSibling;
+        if (otherAnswer) otherAnswer.classList.remove('faq-answer--open');
+      }
+    });
+
+    // Toggle current
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    if (answer) answer.classList.toggle('faq-answer--open', !isOpen);
+  });
+});
+
 // ── SCROLL REVEAL ──
 const revealEls = document.querySelectorAll(
-  '.service-card, .step, .testimonial-card, .why-feature, .carrier-logo, .why-photo-wrap, .doctor-card'
+  '.service-card, .step, .testimonial-card, .why-feature, .carrier-logo, .why-photo-wrap, .doctor-card, .gallery-card, .referral-step, .faq-item'
 );
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
