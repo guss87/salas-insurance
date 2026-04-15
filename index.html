@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salas Insurance Group – Tu Seguro de Salud en USA</title>
+  <meta name="description" content="Fernando Salas te ayuda a encontrar el mejor seguro de salud, dental, visión y vida en Estados Unidos. Servicio en español e inglés. (929) 396-9920" />
+  <meta property="og:title" content="Salas Insurance Group – Health Insurance in USA" />
+  <meta property="og:description" content="Your trusted health insurance agent. Medicare, ACA/Obamacare, Life, Dental & Vision. Bilingual service. Call: (929) 396-9920" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="header">
+    <div class="header-inner container">
+      <a href="#inicio" class="logo" aria-label="Salas Insurance Group">
+        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+          <rect width="42" height="42" rx="6" fill="#1B2A4A"/>
+          <text x="21" y="29" text-anchor="middle" font-family="serif" font-size="24" font-weight="700" fill="#C9A84C">S</text>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-name">SALAS</span>
+          <span class="logo-sub">Insurance Group</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="#como-funciona" data-es="¿Cómo funciona?" data-en="How it works">¿Cómo funciona?</a>
+        <a href="#aseguradoras" data-es="Aseguradoras" data-en="Carriers">Aseguradoras</a>
+        <a href="#testimonioss" data-es="Testimonios" data-en="Reviews">Testimonios</a>
+        <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+19293969920" class="btn btn-outline btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (929) 396-9920
+        </a>
+
+        <!-- LANGUAGE TOGGLE -->
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-option lang-es active">🇪🇸 ES</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-option lang-en">🇺🇸 EN</span>
+        </button>
+
+        <button class="btn btn-primary btn-sm" onclick="scrollToContact()" data-es="Cotiza Gratis" data-en="Free Quote">Cotiza Gratis</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge" data-es="Servicio 100% en Español" data-en="Bilingual Service · English & Spanish">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Servicio 100% en Español
+        </div>
+        <h1 class="hero-title">
+          <span data-es="Tu salud y la de tu familia <em>en buenas manos</em>" data-en="Your health and your family's <em>in good hands</em>">Tu salud y la de tu familia <em>en buenas manos</em></span>
+        </h1>
+        <p class="hero-desc" data-es="Encuentra el plan de seguro perfecto para ti: salud, dental, visión, vida y Medicare. Sin costo adicional — como agente certificado, yo trabajo para ti." data-en="Find the perfect insurance plan for you: health, dental, vision, life, and Medicare. At no extra cost — as a certified agent, I work for you.">
+          Encuentra el plan de seguro perfecto para ti: salud, dental, visión, vida y Medicare. Sin costo adicional — como agente certificado, yo trabajo para ti.
+        </p>
+
+        <div class="hero-ctas">
+          <button class="btn btn-primary btn-lg" onclick="scrollToContact()" data-es="Solicita tu cotización gratis →" data-en="Get your free quote →">
+            Solicita tu cotización gratis
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <a href="https://wa.me/19293969920" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">500+</span>
+            <span class="stat-label" data-es="Familias protegidas" data-en="Families protected">Familias protegidas</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">7+</span>
+            <span class="stat-label" data-es="Aseguradoras" data-en="Insurance Carriers">Aseguradoras</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label" data-es="Gratis para ti" data-en="Free for you">Gratis para ti</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agent Card with real photo -->
+      <div class="hero-agent">
+        <div class="agent-card">
+          <div class="agent-photo-wrap">
+            <img src="fernando-headshot.jpg" alt="Fernando Salas — Insurance Agent" class="agent-photo" />
+          </div>
+          <div class="agent-info">
+            <div class="agent-verified" data-es="✓ Agente Certificado" data-en="✓ Certified Agent">
+              ✓ Agente Certificado
+            </div>
+            <h2 class="agent-name">Fernando Salas</h2>
+            <p class="agent-title" data-es="Agente de Seguros de Salud" data-en="Licensed Health Insurance Agent">Agente de Seguros de Salud</p>
+            <p class="agent-tagline">"Your Trusted Insurance Partner"</p>
+            <a href="tel:+19293969920" class="agent-phone">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (929) 396-9920
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker">
+        <span>Medicare</span><span class="sep">✦</span>
+        <span>Obamacare / ACA</span><span class="sep">✦</span>
+        <span data-es="Póliza de Vida" data-en="Life Insurance">Póliza de Vida</span><span class="sep">✦</span>
+        <span data-es="Póliza de Visión" data-en="Vision Plan">Póliza de Visión</span><span class="sep">✦</span>
+        <span data-es="Póliza Dental" data-en="Dental Plan">Póliza Dental</span><span class="sep">✦</span>
+        <span data-es="Gastos Finales" data-en="Final Expense">Gastos Finales</span><span class="sep">✦</span>
+        <span>Medicare</span><span class="sep">✦</span>
+        <span>Obamacare / ACA</span><span class="sep">✦</span>
+        <span data-es="Póliza de Vida" data-en="Life Insurance">Póliza de Vida</span><span class="sep">✦</span>
+        <span data-es="Póliza de Visión" data-en="Vision Plan">Póliza de Visión</span><span class="sep">✦</span>
+        <span data-es="Póliza Dental" data-en="Dental Plan">Póliza Dental</span><span class="sep">✦</span>
+        <span data-es="Gastos Finales" data-en="Final Expense">Gastos Finales</span><span class="sep">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICIOS ═══ -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</p>
+        <h2 class="section-title" data-es="Todo lo que necesitas para proteger a tu familia" data-en="Everything you need to protect your family">Todo lo que necesitas para proteger a tu familia</h2>
+        <p class="section-desc" data-es="Ofrecemos una variedad de planes adaptados a tus necesidades y presupuesto." data-en="We offer a variety of plans tailored to your needs and budget.">Ofrecemos una variedad de planes adaptados a tus necesidades y presupuesto.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card service-card--featured">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 data-es="Seguro de Salud (ACA/Obamacare)" data-en="Health Insurance (ACA/Obamacare)">Seguro de Salud (ACA/Obamacare)</h3>
+          <p data-es="Planes individuales y familiares con subsidios disponibles según tus ingresos. Cero costo para muchos califican." data-en="Individual and family plans with subsidies available based on your income. Zero cost for many who qualify.">Planes individuales y familiares con subsidios disponibles según tus ingresos. Cero costo para muchos califican.</p>
+          <ul class="service-benefits">
+            <li data-es="Subsidios disponibles" data-en="Subsidies available">Subsidios disponibles</li>
+            <li data-es="Períodos de inscripción especial" data-en="Special enrollment periods">Períodos de inscripción especial</li>
+            <li data-es="Cobertura inmediata" data-en="Immediate coverage">Cobertura inmediata</li>
+          </ul>
+          <button class="btn btn-primary btn-sm mt-auto" onclick="scrollToContact()" data-es="Cotizar ahora" data-en="Get a quote">Cotizar ahora</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Medicare</h3>
+          <p data-es="Planes Medicare Advantage y Suplementales para personas mayores de 65 años o con discapacidad." data-en="Medicare Advantage and Supplemental plans for people 65+ or with disabilities.">Planes Medicare Advantage y Suplementales para personas mayores de 65 años o con discapacidad.</p>
+          <button class="btn btn-outline btn-sm mt-auto" onclick="scrollToContact()" data-es="Más información" data-en="Learn more">Más información</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+          </div>
+          <h3 data-es="Póliza de Vida" data-en="Life Insurance">Póliza de Vida</h3>
+          <p data-es="Protege el futuro de tu familia con una póliza de vida que garantiza tranquilidad cuando más lo necesitan." data-en="Protect your family's future with a life policy that provides peace of mind when they need it most.">Protege el futuro de tu familia con una póliza de vida que garantiza tranquilidad cuando más lo necesitan.</p>
+          <button class="btn btn-outline btn-sm mt-auto" onclick="scrollToContact()" data-es="Más información" data-en="Learn more">Más información</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2"/><path d="M12 5v2M12 17v2M5 12H3M21 12h-2M7.05 7.05 5.64 5.64M18.36 18.36l-1.41-1.41M7.05 16.95l-1.41 1.41M18.36 5.64l-1.41 1.41"/></svg>
+          </div>
+          <h3 data-es="Póliza de Visión" data-en="Vision Plan">Póliza de Visión</h3>
+          <p data-es="Cuida tu vista con planes que cubren exámenes, lentes y armazones a precios accesibles." data-en="Take care of your vision with plans covering exams, lenses, and frames at affordable prices.">Cuida tu vista con planes que cubren exámenes, lentes y armazones a precios accesibles.</p>
+          <button class="btn btn-outline btn-sm mt-auto" onclick="scrollToContact()" data-es="Más información" data-en="Learn more">Más información</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 data-es="Póliza Dental" data-en="Dental Plan">Póliza Dental</h3>
+          <p data-es="Mantén tu sonrisa saludable con coberturas para limpiezas, empastes, extracciones y más." data-en="Keep your smile healthy with coverage for cleanings, fillings, extractions, and more.">Mantén tu sonrisa saludable con coberturas para limpiezas, empastes, extracciones y más.</p>
+          <button class="btn btn-outline btn-sm mt-auto" onclick="scrollToContact()" data-es="Más información" data-en="Learn more">Más información</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 data-es="Gastos Finales" data-en="Final Expense">Gastos Finales</h3>
+          <p data-es="Un plan de bajo costo que cubre gastos funerarios y protege a tu familia de cargas económicas inesperadas." data-en="A low-cost plan that covers funeral expenses and protects your family from unexpected financial burdens.">Un plan de bajo costo que cubre gastos funerarios y protege a tu familia de cargas económicas inesperadas.</p>
+          <button class="btn btn-outline btn-sm mt-auto" onclick="scrollToContact()" data-es="Más información" data-en="Learn more">Más información</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CÓMO FUNCIONA ═══ -->
+  <section class="section section--navy" id="como-funciona">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="section-eyebrow" data-es="Proceso Simple" data-en="Simple Process">Proceso Simple</p>
+        <h2 class="section-title" data-es="¿Cómo te ayudamos?" data-en="How do we help you?">¿Cómo te ayudamos?</h2>
+        <p class="section-desc" data-es="En solo 3 pasos tendrás el mejor seguro para tu familia, sin complicaciones." data-en="In just 3 steps you'll have the best insurance for your family, hassle-free.">En solo 3 pasos tendrás el mejor seguro para tu familia, sin complicaciones.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3 data-es="Nos contactas" data-en="Contact us">Nos contactas</h3>
+          <p data-es="Escríbenos por WhatsApp, llámanos o completa el formulario. Respondemos en minutos." data-en="Message us on WhatsApp, call us, or fill out the form. We respond in minutes.">Escríbenos por WhatsApp, llámanos o completa el formulario. Respondemos en minutos.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3 data-es="Analizamos tu caso" data-en="We analyze your case">Analizamos tu caso</h3>
+          <p data-es="Fernando evalúa tu situación, ingresos y necesidades para encontrar el plan ideal." data-en="Fernando evaluates your situation, income, and needs to find the ideal plan.">Fernando evalúa tu situación, ingresos y necesidades para encontrar el plan ideal.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3 data-es="Te inscribimos" data-en="We enroll you">Te inscribimos</h3>
+          <p data-es="Manejamos todo el papeleo. En poco tiempo tendrás tu cobertura activa. 100% gratis para ti." data-en="We handle all the paperwork. In no time you'll have your coverage active. 100% free for you.">Manejamos todo el papeleo. En poco tiempo tendrás tu cobertura activa. 100% gratis para ti.</p>
+        </div>
+      </div>
+
+      <div class="cta-center">
+        <button class="btn btn-gold btn-lg" onclick="scrollToContact()" data-es="Comenzar ahora — Es gratis" data-en="Start now — It's free">
+          Comenzar ahora — Es gratis
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ¿POR QUÉ ELEGIRNOS? — with Fernando's photo ═══ -->
+  <section class="section" id="porque">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-photo-col">
+          <div class="why-photo-wrap">
+            <img src="fernando-hero.jpg" alt="Fernando Salas — Agente de Seguros" class="why-photo" />
+            <div class="why-photo-badge">
+              <div class="why-photo-badge-inner">
+                <strong data-es="Agente de Confianza" data-en="Trusted Agent">Agente de Confianza</strong>
+                <span>Fernando Salas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-content">
+          <p class="section-eyebrow" data-es="¿Por qué elegirnos?" data-en="Why choose us?">¿Por qué elegirnos?</p>
+          <h2 class="section-title">
+            <span data-es="Un agente que trabaja <em>para ti</em>, no para las compañías" data-en="An agent who works <em>for you</em>, not for the companies">Un agente que trabaja <em>para ti</em>, no para las compañías</span>
+          </h2>
+          <p data-es="Como agente independiente certificado, Fernando Salas tiene acceso a múltiples compañías de seguros. Siempre busca la mejor opción para ti, no la que más beneficia a la aseguradora." data-en="As a certified independent agent, Fernando Salas has access to multiple insurance companies. He always finds the best option for you — not what benefits the carrier most.">Como agente independiente certificado, Fernando Salas tiene acceso a múltiples compañías de seguros. Siempre busca la mejor opción para ti, no la que más beneficia a la aseguradora.</p>
+          <p data-es="Trabajamos principalmente con la comunidad latina en Estados Unidos, entendiendo sus desafíos únicos: barreras del idioma y la necesidad de alguien de confianza." data-en="We primarily serve the Latino community in the United States, understanding their unique challenges — including language barriers and the need for a trusted guide.">Trabajamos principalmente con la comunidad latina en Estados Unidos, entendiendo sus desafíos únicos: barreras del idioma y la necesidad de alguien de confianza.</p>
+
+          <div class="why-features">
+            <div class="why-feature">
+              <div class="why-icon">✓</div>
+              <div>
+                <strong data-es="Planes flexibles y personalizados" data-en="Flexible, personalized plans">Planes flexibles y personalizados</strong>
+                <p data-es="Adaptamos cada plan a tu presupuesto y familia." data-en="We tailor every plan to your budget and family.">Adaptamos cada plan a tu presupuesto y familia.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-icon">✓</div>
+              <div>
+                <strong data-es="Reclamos rápidos y sencillos" data-en="Fast, simple claims">Reclamos rápidos y sencillos</strong>
+                <p data-es="Te acompañamos en cada proceso de reclamación." data-en="We guide you through every step of the claims process.">Te acompañamos en cada proceso de reclamación.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-icon">✓</div>
+              <div>
+                <strong data-es="Primas accesibles — muchos califican para $0" data-en="Affordable premiums — many qualify for $0">Primas accesibles — muchos califican para $0</strong>
+                <p data-es="Subsidios disponibles según tus ingresos." data-en="Subsidies available based on your income.">Subsidios disponibles según tus ingresos.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-icon">✓</div>
+              <div>
+                <strong data-es="Servicio bilingüe — Español & English" data-en="Bilingual service — Spanish & English">Servicio bilingüe — Español &amp; English</strong>
+                <p data-es="Hablamos tu idioma. Tu cultura, nuestro compromiso." data-en="We speak your language. Your culture, our commitment.">Hablamos tu idioma. Tu cultura, nuestro compromiso.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-icon">✓</div>
+              <div>
+                <strong data-es="Atención personalizada, siempre disponible" data-en="Personalized attention, always available">Atención personalizada, siempre disponible</strong>
+                <p data-es="Un agente real — no un bot ni una línea de espera." data-en="A real agent — not a bot or a waiting line.">Un agente real — no un bot ni una línea de espera.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/19293969920" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="margin-top: var(--space-8)" data-es="Habla con Fernando hoy" data-en="Talk to Fernando today">
+            Habla con Fernando hoy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ASEGURADORAS ═══ -->
+  <section class="section section--soft" id="aseguradoras">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-es="Nuestros Socios" data-en="Our Partners">Nuestros Socios</p>
+        <h2 class="section-title" data-es="Trabajamos con las mejores aseguradoras" data-en="We work with the best insurance carriers">Trabajamos con las mejores aseguradoras</h2>
+        <p class="section-desc" data-es="Acceso a los principales proveedores de seguros en Estados Unidos." data-en="Access to the leading insurance providers in the United States.">Acceso a los principales proveedores de seguros en Estados Unidos.</p>
+      </div>
+      <div class="carriers-grid">
+        <div class="carrier-logo">Anthem</div>
+        <div class="carrier-logo">Aetna</div>
+        <div class="carrier-logo">Humana</div>
+        <div class="carrier-logo">Oscar</div>
+        <div class="carrier-logo">Molina<br><small>Healthcare</small></div>
+        <div class="carrier-logo">Ambetter</div>
+        <div class="carrier-logo">Cigna</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIOS ═══ -->
+  <section class="section" id="testimonioss">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-es="Lo que dicen nuestros clientes" data-en="What our clients say">Lo que dicen nuestros clientes</p>
+        <h2 class="section-title" data-es="Familias que ya están protegidas" data-en="Families already protected">Familias que ya están protegidas</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote data-es="&ldquo;Fernando nos ayudó a encontrar un plan de salud para toda la familia por menos de lo que pensábamos. Siempre disponible y muy profesional.&rdquo;" data-en="&ldquo;Fernando helped us find a health plan for the whole family for less than we thought. Always available and very professional.&rdquo;">"Fernando nos ayudó a encontrar un plan de salud para toda la familia por menos de lo que pensábamos. Siempre disponible y muy profesional."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <strong>María R.</strong>
+              <span>Miami, Florida</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card testimonial-card--featured">
+          <div class="stars">★★★★★</div>
+          <blockquote data-es="&ldquo;No sabía que podía calificar para un seguro casi sin costo. Fernando me explicó todo en español y fue muy paciente. Lo recomiendo al 100%.&rdquo;" data-en="&ldquo;I didn't know I could qualify for insurance at almost no cost. Fernando explained everything patiently. I recommend him 100%.&rdquo;">"No sabía que podía calificar para un seguro casi sin costo. Fernando me explicó todo en español y fue muy paciente. Lo recomiendo al 100%."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JG</div>
+            <div>
+              <strong>José G.</strong>
+              <span>Orlando, Florida</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote data-es="&ldquo;Rápido, honesto y muy amable. Consiguió el mejor plan de Medicare para mi mamá. Sin él, habríamos pagado el doble.&rdquo;" data-en="&ldquo;Fast, honest, and very kind. He got the best Medicare plan for my mom. Without him, we would have paid double.&rdquo;">"Rápido, honesto y muy amable. Consiguió el mejor plan de Medicare para mi mamá. Sin él, habríamos pagado el doble."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">LM</div>
+            <div>
+              <strong>Lucía M.</strong>
+              <span>Tampa, Florida</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACTO ═══ -->
+  <section class="section section--navy" id="contacto">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-eyebrow" style="color:#C9A84C" data-es="Contacto" data-en="Contact">Contacto</p>
+          <h2 class="section-title" style="color:#fff" data-es="¿Listo para proteger a tu familia?" data-en="Ready to protect your family?">¿Listo para proteger a tu familia?</h2>
+          <p style="color:rgba(255,255,255,0.8)" data-es="Completa el formulario y Fernando te contactará en menos de 24 horas. O escríbenos directamente por WhatsApp." data-en="Fill out the form and Fernando will contact you within 24 hours. Or message us directly on WhatsApp.">Completa el formulario y Fernando te contactará en menos de 24 horas. O escríbenos directamente por WhatsApp.</p>
+
+          <div class="contact-methods">
+            <a href="tel:+19293969920" class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <strong>(929) 396-9920</strong>
+                <span data-es="Lunes a Sábado, 9am–8pm" data-en="Mon–Sat, 9am–8pm">Lunes a Sábado, 9am–8pm</span>
+              </div>
+            </a>
+            <a href="mailto:fernandosminsurance@gmail.com" class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>fernandosminsurance@gmail.com</strong>
+                <span data-es="Respuesta en 24 horas" data-en="Response within 24 hours">Respuesta en 24 horas</span>
+              </div>
+            </a>
+            <a href="https://wa.me/19293969920" target="_blank" rel="noopener" class="contact-method">
+              <div class="contact-method-icon contact-method-icon--green">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              </div>
+              <div>
+                <strong data-es="WhatsApp directo" data-en="WhatsApp direct">WhatsApp directo</strong>
+                <span>+1 (929) 396-9920</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm" novalidate>
+            <h3 data-es="Solicita tu cotización gratuita" data-en="Request your free quote">Solicita tu cotización gratuita</h3>
+            <p class="form-subtitle" data-es="Sin compromiso. Te respondemos en menos de 24 horas." data-en="No commitment. We'll respond within 24 hours.">Sin compromiso. Te respondemos en menos de 24 horas.</p>
+
+            <div class="form-group">
+              <label for="nombre" data-es="Nombre completo *" data-en="Full name *">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" data-es-placeholder="Tu nombre completo" data-en-placeholder="Your full name" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono" data-es="Teléfono *" data-en="Phone *">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="(305) 000-0000" required />
+              </div>
+              <div class="form-group">
+                <label for="email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tu@correo.com" data-es-placeholder="tu@correo.com" data-en-placeholder="your@email.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="estado" data-es="Estado donde vives *" data-en="State where you live *">Estado donde vives *</label>
+              <select id="estado" name="estado" required>
+                <option value="" data-es="Selecciona tu estado" data-en="Select your state">Selecciona tu estado</option>
+                <option>Florida</option>
+                <option>Texas</option>
+                <option>California</option>
+                <option>New York</option>
+                <option>New Jersey</option>
+                <option>Georgia</option>
+                <option>Illinois</option>
+                <option data-es="Otro" data-en="Other">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="seguro" data-es="¿Qué tipo de seguro buscas? *" data-en="What type of insurance are you looking for? *">¿Qué tipo de seguro buscas? *</label>
+              <select id="seguro" name="seguro" required>
+                <option value="" data-es="Selecciona un tipo" data-en="Select a type">Selecciona un tipo</option>
+                <option data-es="Seguro de Salud (ACA/Obamacare)" data-en="Health Insurance (ACA/Obamacare)">Seguro de Salud (ACA/Obamacare)</option>
+                <option>Medicare</option>
+                <option data-es="Póliza de Vida" data-en="Life Insurance">Póliza de Vida</option>
+                <option data-es="Póliza Dental" data-en="Dental Plan">Póliza Dental</option>
+                <option data-es="Póliza de Visión" data-en="Vision Plan">Póliza de Visión</option>
+                <option data-es="Gastos Finales" data-en="Final Expense">Gastos Finales</option>
+                <option data-es="No estoy seguro – necesito orientación" data-en="Not sure – I need guidance">No estoy seguro – necesito orientación</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="personas" data-es="¿Cuántas personas necesitan cobertura?" data-en="How many people need coverage?">¿Cuántas personas necesitan cobertura?</label>
+              <select id="personas" name="personas">
+                <option data-es="Solo yo" data-en="Just me">Solo yo</option>
+                <option data-es="Yo y mi pareja" data-en="Me and my partner">Yo y mi pareja</option>
+                <option data-es="Familia con hijos" data-en="Family with children">Familia con hijos</option>
+                <option data-es="Más de 4 personas" data-en="More than 4 people">Más de 4 personas</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje" data-es="Mensaje adicional (opcional)" data-en="Additional message (optional)">Mensaje adicional (opcional)</label>
+              <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos algo más sobre lo que buscas..." data-es-placeholder="Cuéntanos algo más sobre lo que buscas..." data-en-placeholder="Tell us more about what you're looking for..."></textarea>
+            </div>
+
+            <!-- Preferred language capture (hidden, auto-set by JS) -->
+            <input type="hidden" id="lang_pref" name="lang_pref" value="es" />
+
+            <button type="submit" class="btn btn-gold btn-lg form-submit" data-es="Enviar solicitud gratuita →" data-en="Send free request →">
+              Enviar solicitud gratuita
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+
+            <p class="form-disclaimer" data-es="Tu información es privada y nunca será compartida." data-en="Your information is private and will never be shared.">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 12 2a8 8 0 0 0-8 8.2c0 7.3 8 11.8 8 11.8z"/></svg>
+              Tu información es privada y nunca será compartida.
+            </p>
+
+            <div class="form-success" id="formSuccess" style="display:none">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <strong data-es="¡Mensaje enviado!" data-en="Message sent!">¡Mensaje enviado!</strong>
+              <p data-es="Fernando te contactará pronto. También puedes escribirle directamente por WhatsApp." data-en="Fernando will contact you soon. You can also message him directly on WhatsApp.">Fernando te contactará pronto. También puedes escribirle directamente por WhatsApp.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo">
+          <svg width="36" height="36" viewBox="0 0 42 42" fill="none">
+            <rect width="42" height="42" rx="6" fill="#C9A84C"/>
+            <text x="21" y="29" text-anchor="middle" font-family="serif" font-size="24" font-weight="700" fill="#1B2A4A">S</text>
+          </svg>
+          <div class="logo-text">
+            <span class="logo-name" style="color:#fff">SALAS</span>
+            <span class="logo-sub" style="color:rgba(255,255,255,0.4)">Insurance Group</span>
+          </div>
+        </a>
+        <p class="footer-tagline">"Your Trusted Insurance Partner"</p>
+        <p class="footer-tagline-es" data-es="Tu aliado en seguros de salud en USA" data-en="Your health insurance ally in the USA">Tu aliado en seguros de salud en USA</p>
+      </div>
+
+      <div class="footer-links">
+        <h4 data-es="Servicios" data-en="Services">Servicios</h4>
+        <ul>
+          <li><a href="#servicios" data-es="Obamacare / ACA" data-en="ACA / Obamacare">Obamacare / ACA</a></li>
+          <li><a href="#servicios">Medicare</a></li>
+          <li><a href="#servicios" data-es="Póliza de Vida" data-en="Life Insurance">Póliza de Vida</a></li>
+          <li><a href="#servicios" data-es="Dental y Visión" data-en="Dental &amp; Vision">Dental y Visión</a></li>
+          <li><a href="#servicios" data-es="Gastos Finales" data-en="Final Expense">Gastos Finales</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
+        <ul>
+          <li><a href="tel:+19293969920">(929) 396-9920</a></li>
+          <li><a href="mailto:fernandosminsurance@gmail.com">fernandosminsurance@gmail.com</a></li>
+          <li><a href="https://wa.me/19293969920" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4 data-es="Compañías" data-en="Carriers">Compañías</h4>
+        <ul>
+          <li>Anthem</li><li>Aetna</li><li>Humana</li>
+          <li>Oscar Health</li><li>Molina Healthcare</li>
+          <li>Ambetter</li><li>Cigna</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Salas Insurance Group · Fernando Salas — <span data-es="Agente Certificado" data-en="Licensed Agent">Agente Certificado</span></p>
+        <p data-es="Servicio disponible en múltiples estados de los EE.UU." data-en="Service available in multiple U.S. states.">Servicio disponible en múltiples estados de los EE.UU.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ WHATSAPP FAB ═══ -->
+  <a href="https://wa.me/19293969920?text=Hola%20Fernando%2C%20me%20interesa%20obtener%20informaci%C3%B3n%20sobre%20seguros%20de%20salud."
+     target="_blank" rel="noopener"
+     class="whatsapp-fab"
+     aria-label="Chat on WhatsApp with Fernando Salas"
+     id="whatsappFab">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </svg>
+    <span class="whatsapp-fab-label" data-es="¿Preguntas? Escríbenos" data-en="Questions? Chat with us">¿Preguntas? Escríbenos</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
