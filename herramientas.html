@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Herramientas — Salas Insurance Group</title>
+  <meta name="description" content="Calcula tu subsidio ACA gratis, busca médicos, estima tu cobertura. Herramientas gratuitas de Salas Insurance Group." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="herramientas.css" />
+</head>
+<body>
+
+  <!-- ── HEADER (igual al principal) ── -->
+  <header class="header header--scrolled" id="header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="Salas Insurance Group">
+        <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="6" fill="#1B2A4A"/><text x="21" y="29" text-anchor="middle" font-family="serif" font-size="24" font-weight="700" fill="#C9A84C">S</text></svg>
+        <div class="logo-text">
+          <span class="logo-name">SALAS</span>
+          <span class="logo-sub">Insurance Group</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="index.html#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="index.html#aseguradoras" data-es="Aseguradoras" data-en="Carriers">Aseguradoras</a>
+        <a href="herramientas.html" class="nav-active" data-es="Herramientas" data-en="Tools">Herramientas</a>
+        <a href="index.html#referidos" data-es="Referidos" data-en="Referrals">Referidos</a>
+        <a href="index.html#faq" data-es="Preguntas" data-en="FAQ">Preguntas</a>
+        <a href="index.html#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+19293969920" class="btn btn-outline btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (929) 396-9920
+        </a>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-option lang-es active">🇪🇸 ES</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-option lang-en">🇺🇸 EN</span>
+        </button>
+        <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html#contacto'" data-es="Cotiza Gratis" data-en="Free Quote">Cotiza Gratis</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="tools-hero">
+    <div class="container">
+      <p class="section-eyebrow" data-es="Herramientas Gratuitas" data-en="Free Tools">Herramientas Gratuitas</p>
+      <h1 class="tools-hero-title" data-es="Calcula, compara y decide <em>con información</em>" data-en="Calculate, compare and decide <em>with information</em>">Calcula, compara y decide <em>con información</em></h1>
+      <p class="tools-hero-desc" data-es="Estas herramientas son 100% gratuitas. No reemplazan la asesoría de Fernando, pero te ayudan a llegar mejor preparado." data-en="These tools are 100% free. They don't replace Fernando's advice, but help you arrive better prepared.">Estas herramientas son 100% gratuitas. No reemplazan la asesoría de Fernando, pero te ayudan a llegar mejor preparado.</p>
+    </div>
+  </section>
+
+  <!-- ── TOOL TABS ── -->
+  <div class="tools-tabs-wrap">
+    <div class="container">
+      <div class="tools-tabs" role="tablist">
+        <button class="tools-tab tools-tab--active" role="tab" data-tool="calculadora" aria-selected="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span data-es="Calculadora ACA" data-en="ACA Calculator">Calculadora ACA</span>
+        </button>
+        <button class="tools-tab" role="tab" data-tool="medicos" aria-selected="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-es="Buscar Médico" data-en="Find a Doctor">Buscar Médico</span>
+        </button>
+        <button class="tools-tab tools-tab--soon" role="tab" data-tool="auto" aria-selected="false" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</span>
+          <span class="tools-tab-badge" data-es="Próximamente" data-en="Coming soon">Próximamente</span>
+        </button>
+        <button class="tools-tab tools-tab--soon" role="tab" data-tool="casa" aria-selected="false" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span data-es="Seguro de Casa" data-en="Home Insurance">Seguro de Casa</span>
+          <span class="tools-tab-badge" data-es="Próximamente" data-en="Coming soon">Próximamente</span>
+        </button>
+        <button class="tools-tab tools-tab--soon" role="tab" data-tool="bote" aria-selected="false" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2M2 20l4-12h12l4 12"/><path d="M12 2v6"/><path d="M8 8h8"/></svg>
+          <span data-es="Seguro de Bote" data-en="Boat Insurance">Seguro de Bote</span>
+          <span class="tools-tab-badge" data-es="Próximamente" data-en="Coming soon">Próximamente</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       TOOL PANELS
+  ══════════════════════════════════════ -->
+  <main class="tools-content">
+    <div class="container">
+
+      <!-- ── CALCULADORA ACA ── -->
+      <div class="tool-panel tool-panel--active" id="panel-calculadora" role="tabpanel">
+
+        <div class="calc-layout">
+
+          <!-- Controles -->
+          <div class="calc-controls">
+            <div class="calc-intro">
+              <h2 data-es="Calcula tu subsidio ACA" data-en="Calculate your ACA subsidy">Calcula tu subsidio ACA</h2>
+              <p data-es="Ingresa tus datos para ver cuánto subsidio del gobierno puedes recibir. Muchas familias califican para planes desde $0 al mes — y no lo saben." data-en="Enter your information to see how much government subsidy you may receive. Many families qualify for $0/month plans — and don't know it.">Ingresa tus datos para ver cuánto subsidio del gobierno puedes recibir. Muchas familias califican para planes desde $0 al mes — y no lo saben.</p>
+            </div>
+
+            <!-- Personas en el hogar -->
+            <div class="calc-field">
+              <label class="calc-label" data-es="Personas en el hogar" data-en="Household size">Personas en el hogar</label>
+              <div class="calc-stepper">
+                <button class="calc-step-btn" id="stepDown" aria-label="Reducir">−</button>
+                <span class="calc-step-val" id="householdVal">3</span>
+                <button class="calc-step-btn" id="stepUp" aria-label="Aumentar">+</button>
+              </div>
+            </div>
+
+            <!-- Slider de ingresos -->
+            <div class="calc-field">
+              <div class="calc-label-row">
+                <label class="calc-label" data-es="Ingreso familiar anual" data-en="Annual household income">Ingreso familiar anual</label>
+                <span class="calc-income-val" id="incomeDisplay">$40,000</span>
+              </div>
+              <input type="range" class="calc-slider" id="incomeSlider"
+                min="10000" max="150000" step="1000" value="40000"
+                aria-label="Ingreso anual" />
+              <div class="calc-slider-labels">
+                <span>$10K</span>
+                <span>$50K</span>
+                <span>$100K</span>
+                <span>$150K</span>
+              </div>
+            </div>
+
+            <!-- Estado -->
+            <div class="calc-field">
+              <label class="calc-label" data-es="Estado de residencia" data-en="State of residence">Estado de residencia</label>
+              <select class="calc-select" id="stateSelect">
+                <option value="FL">Florida</option>
+                <option value="TX">Texas</option>
+                <option value="CA">California</option>
+                <option value="NY">New York</option>
+                <option value="GA">Georgia</option>
+                <option value="NC">North Carolina</option>
+                <option value="NJ">New Jersey</option>
+                <option value="other" data-es="Otro estado" data-en="Other state">Otro estado</option>
+              </select>
+            </div>
+
+            <!-- Edad del titular -->
+            <div class="calc-field">
+              <div class="calc-label-row">
+                <label class="calc-label" data-es="Edad del titular" data-en="Primary applicant age">Edad del titular</label>
+                <span class="calc-income-val" id="ageDisplay">35</span>
+              </div>
+              <input type="range" class="calc-slider" id="ageSlider"
+                min="18" max="64" step="1" value="35"
+                aria-label="Edad" />
+              <div class="calc-slider-labels">
+                <span>18</span>
+                <span>30</span>
+                <span>45</span>
+                <span>64</span>
+              </div>
+            </div>
+
+            <div class="calc-disclaimer-small" data-es="* Estimación basada en tablas FPL 2024. Solo orientativa — no es una cotización oficial." data-en="* Estimate based on 2024 FPL tables. For guidance only — not an official quote.">* Estimación basada en tablas FPL 2024. Solo orientativa — no es una cotización oficial.</div>
+          </div>
+
+          <!-- Resultados -->
+          <div class="calc-results">
+            <div class="calc-result-card" id="calcResultCard">
+
+              <div class="calc-result-header">
+                <p class="calc-result-eyebrow" data-es="Tu estimado de subsidio" data-en="Your subsidy estimate">Tu estimado de subsidio</p>
+              </div>
+
+              <!-- FPL badge -->
+              <div class="calc-fpl-wrap">
+                <div class="calc-fpl-bar-bg">
+                  <div class="calc-fpl-bar" id="fplBar" style="width:60%"></div>
+                </div>
+                <div class="calc-fpl-labels">
+                  <span data-es="0% FPL" data-en="0% FPL">0% FPL</span>
+                  <span id="fplLabel" class="calc-fpl-pct">180% FPL</span>
+                  <span data-es="400% FPL" data-en="400% FPL">400%+ FPL</span>
+                </div>
+              </div>
+
+              <!-- Número grande -->
+              <div class="calc-big-result">
+                <div class="calc-big-num-wrap">
+                  <span class="calc-big-prefix">$</span>
+                  <span class="calc-big-num" id="subsidyAmount">0</span>
+                  <span class="calc-big-suffix" data-es="/mes de subsidio" data-en="/month subsidy">/mes de subsidio</span>
+                </div>
+                <p class="calc-big-desc" id="subsidyDesc">Cargando...</p>
+              </div>
+
+              <!-- Desglose -->
+              <div class="calc-breakdown" id="calcBreakdown">
+                <div class="calc-breakdown-row">
+                  <span data-es="Costo del plan antes de subsidio" data-en="Plan cost before subsidy">Costo del plan antes de subsidio</span>
+                  <strong id="brkBefore">—</strong>
+                </div>
+                <div class="calc-breakdown-row">
+                  <span data-es="Subsidio del gobierno" data-en="Government subsidy">Subsidio del gobierno</span>
+                  <strong id="brkSubsidy" class="calc-green">—</strong>
+                </div>
+                <div class="calc-breakdown-row calc-breakdown-row--total">
+                  <span data-es="Tu pago mensual estimado" data-en="Your estimated monthly payment">Tu pago mensual estimado</span>
+                  <strong id="brkYou" class="calc-gold">—</strong>
+                </div>
+              </div>
+
+              <!-- Eligibility badge -->
+              <div class="calc-badge-wrap" id="calcBadge">
+                <div class="calc-badge calc-badge--green" id="calcBadgeEl">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span id="calcBadgeText">Calificas para subsidio ACA</span>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="calc-result-cta">
+                <p class="calc-cta-note" data-es="Fernando puede conseguirte el plan exacto — gratis para ti." data-en="Fernando can get you the exact plan — free for you.">Fernando puede conseguirte el plan exacto — gratis para ti.</p>
+                <a href="index.html#contacto" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
+                  <span data-es="Hablar con Fernando →" data-en="Talk to Fernando →">Hablar con Fernando →</span>
+                </a>
+                <a href="https://wa.me/19293969920?text=Hola%20Fernando%2C%20us%C3%A9%20la%20calculadora%20ACA%20y%20quiero%20saber%20m%C3%A1s%20sobre%20mi%20subsidio." target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg" style="width:100%;justify-content:center">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                  <span data-es="WhatsApp a Fernando" data-en="WhatsApp Fernando">WhatsApp a Fernando</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /.calc-layout -->
+
+        <!-- Info boxes -->
+        <div class="calc-info-boxes">
+          <div class="calc-info-box">
+            <div class="calc-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            </div>
+            <div>
+              <strong data-es="¿Qué es el FPL?" data-en="What is FPL?">¿Qué es el FPL?</strong>
+              <p data-es="El Federal Poverty Level (FPL) es el nivel de pobreza federal. Si tu ingreso está entre el 100% y 400% del FPL, calificas para subsidio ACA. En 2024, el 400% FPL para una familia de 4 es ~$124,800." data-en="The Federal Poverty Level (FPL) is used to determine subsidy eligibility. If your income is between 100% and 400% FPL, you qualify for ACA subsidies. In 2024, 400% FPL for a family of 4 is ~$124,800.">El Federal Poverty Level (FPL) es el nivel de pobreza federal. Si tu ingreso está entre el 100% y 400% del FPL, calificas para subsidio ACA. En 2024, el 400% FPL para una familia de 4 es ~$124,800.</p>
+            </div>
+          </div>
+          <div class="calc-info-box">
+            <div class="calc-info-icon calc-info-icon--gold">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+              <strong data-es="Planes desde $0/mes" data-en="Plans from $0/month">Planes desde $0/mes</strong>
+              <p data-es="Con la Ley de Reducción de Inflación (IRA), muchas familias califican para planes de $0 al mes. Fernando verifica tu elegibilidad sin costo y en minutos." data-en="With the Inflation Reduction Act (IRA), many families qualify for $0/month plans. Fernando verifies your eligibility at no cost, in minutes.">Con la Ley de Reducción de Inflación (IRA), muchas familias califican para planes de $0 al mes. Fernando verifica tu elegibilidad sin costo y en minutos.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /#panel-calculadora -->
+
+      <!-- ── BUSCAR MÉDICO ── -->
+      <div class="tool-panel" id="panel-medicos" role="tabpanel" style="display:none">
+        <div class="section-header" style="text-align:left;margin-bottom:var(--space-8)">
+          <h2 data-es="Busca médicos en red cerca de ti" data-en="Find in-network doctors near you">Busca médicos en red cerca de ti</h2>
+          <p class="section-desc" style="max-width:none" data-es="Selecciona tu aseguradora para buscar médicos, especialistas y hospitales en red." data-en="Select your carrier to find in-network doctors, specialists, and hospitals.">Selecciona tu aseguradora para buscar médicos, especialistas y hospitales en red.</p>
+        </div>
+        <div class="doctors-grid">
+          <a href="https://my.ambetterhealth.com/x/hub/public/en/landing-page" target="_blank" rel="noopener" class="doctor-card"><div class="doctor-card-logo">Ambetter</div><div class="doctor-card-body"><h3>Buscar médicos Ambetter</h3><p>Directorio oficial de proveedores en red.</p></div><div class="doctor-card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+          <a href="https://www.hioscar.com/search/networks/" target="_blank" rel="noopener" class="doctor-card"><div class="doctor-card-logo doctor-card-logo--oscar">Oscar</div><div class="doctor-card-body"><h3>Buscar médicos Oscar</h3><p>Red de Oscar Health por estado y plan.</p></div><div class="doctor-card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+          <a href="https://www.anthem.com/find-care/" target="_blank" rel="noopener" class="doctor-card"><div class="doctor-card-logo doctor-card-logo--anthem">Anthem</div><div class="doctor-card-body"><h3>Buscar médicos Anthem</h3><p>Médicos y hospitales en la red de Anthem.</p></div><div class="doctor-card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+          <a href="https://www.aetna.com/individuals-families/find-a-doctor.html" target="_blank" rel="noopener" class="doctor-card"><div class="doctor-card-logo doctor-card-logo--aetna">Aetna</div><div class="doctor-card-body"><h3>Buscar médicos Aetna</h3><p>DocFind de Aetna por especialidad e idioma.</p></div><div class="doctor-card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+          <a href="https://www.humana.com/finder/" target="_blank" rel="noopener" class="doctor-card"><div class="doctor-card-logo doctor-card-logo--humana">Humana</div><div class="doctor-card-body"><h3>Buscar médicos Humana</h3><p>Red de Humana: médicos, dentistas y farmacias.</p></div><div class="doctor-card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+          <a href="https://hcpdirectory.cigna.com/web/public/consumer/directory/search" target="_blank" rel="noopener" class="doctor-card"><div class="doctor-card-logo doctor-card-logo--cigna">Cigna</div><div class="doctor-card-body"><h3>Buscar médicos Cigna</h3><p>Directorio completo de la red Cigna.</p></div><div class="doctor-card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+        </div>
+      </div>
+
+      <!-- ── PRÓXIMAMENTE (auto/casa/bote) ── -->
+      <div class="tool-panel" id="panel-auto" role="tabpanel" style="display:none">
+        <div class="coming-soon-panel">
+          <div class="coming-soon-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <h2 data-es="Seguro de Auto — Próximamente" data-en="Auto Insurance — Coming Soon">Seguro de Auto — Próximamente</h2>
+          <p data-es="Fernando estará ofreciendo seguros de auto muy pronto. Déjanos tu información y serás el primero en saberlo." data-en="Fernando will be offering auto insurance very soon. Leave your information and you'll be the first to know.">Fernando estará ofreciendo seguros de auto muy pronto. Déjanos tu información y serás el primero en saberlo.</p>
+          <a href="index.html#contacto" class="btn btn-primary">
+            <span data-es="Avísame cuando esté disponible" data-en="Notify me when available">Avísame cuando esté disponible</span>
+          </a>
+        </div>
+      </div>
+      <div class="tool-panel" id="panel-casa" role="tabpanel" style="display:none">
+        <div class="coming-soon-panel">
+          <div class="coming-soon-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h2 data-es="Seguro de Casa — Próximamente" data-en="Home Insurance — Coming Soon">Seguro de Casa — Próximamente</h2>
+          <p data-es="Pronto podrás cotizar tu seguro de hogar con Fernando. Déjanos tu contacto." data-en="Soon you'll be able to quote your home insurance with Fernando. Leave your contact info.">Pronto podrás cotizar tu seguro de hogar con Fernando. Déjanos tu contacto.</p>
+          <a href="index.html#contacto" class="btn btn-primary">
+            <span data-es="Avísame cuando esté disponible" data-en="Notify me when available">Avísame cuando esté disponible</span>
+          </a>
+        </div>
+      </div>
+      <div class="tool-panel" id="panel-bote" role="tabpanel" style="display:none">
+        <div class="coming-soon-panel">
+          <div class="coming-soon-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2M2 20l4-12h12l4 12"/><path d="M12 2v6"/><path d="M8 8h8"/></svg></div>
+          <h2 data-es="Seguro de Bote — Próximamente" data-en="Boat Insurance — Coming Soon">Seguro de Bote — Próximamente</h2>
+          <p data-es="El seguro de embarcaciones llegará pronto. Déjanos tu información." data-en="Boat insurance is coming soon. Leave your information.">El seguro de embarcaciones llegará pronto. Déjanos tu información.</p>
+          <a href="index.html#contacto" class="btn btn-primary">
+            <span data-es="Avísame cuando esté disponible" data-en="Notify me when available">Avísame cuando esté disponible</span>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </main>
+
+  <!-- ── FOOTER SIMPLE ── -->
+  <footer class="footer" style="margin-top:var(--space-20)">
+    <div class="footer-bottom">
+      <div class="container" style="justify-content:space-between;display:flex;flex-wrap:wrap;gap:1rem;align-items:center">
+        <p>© 2026 Salas Insurance Group · <span data-es="Agente Certificado" data-en="Licensed Agent">Agente Certificado</span></p>
+        <a href="index.html" class="btn btn-outline btn-sm" data-es="← Volver al sitio" data-en="← Back to site">← Volver al sitio</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/19293969920?text=Hola%20Fernando%2C%20me%20interesa%20obtener%20informaci%C3%B3n%20sobre%20seguros."
+     target="_blank" rel="noopener" class="whatsapp-fab" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <span class="whatsapp-fab-label" data-es="¿Preguntas?" data-en="Questions?">¿Preguntas?</span>
+  </a>
+
+  <script src="herramientas.js"></script>
+</body>
+</html>

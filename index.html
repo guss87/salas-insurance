@@ -123,10 +123,8 @@
 
       <nav class="nav" id="nav" aria-label="Main navigation">
         <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
-        <a href="#como-funciona" data-es="¿Cómo funciona?" data-en="How it works">¿Cómo funciona?</a>
         <a href="#aseguradoras" data-es="Aseguradoras" data-en="Carriers">Aseguradoras</a>
-        <a href="#testimonioss" data-es="Testimonios" data-en="Reviews">Testimonios</a>
-        <a href="#medicos" data-es="Busca Tu Médico" data-en="Find a Doctor">Busca Tu Médico</a>
+        <a href="herramientas.html" data-es="Herramientas" data-en="Tools" style="color:var(--gold);font-weight:700">Herramientas</a>
         <a href="#referidos" data-es="Referidos" data-en="Referrals">Referidos</a>
         <a href="#faq" data-es="Preguntas" data-en="FAQ">Preguntas</a>
         <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
@@ -242,6 +240,64 @@
       </div>
     </div>
   </section>
+
+  <!-- ═══ GALERÍA ═══ -->
+  <section class="section section--soft" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-es="Para Ti y Tu Familia" data-en="For You and Your Family">Para Ti y Tu Familia</p>
+        <h2 class="section-title" data-es="Protección para cada etapa de tu vida" data-en="Protection for every stage of your life">Protección para cada etapa de tu vida</h2>
+        <p class="section-desc" data-es="Desde los primeros años de tus hijos hasta el retiro — Fernando tiene el plan correcto para cada momento." data-en="From your children's early years to retirement — Fernando has the right plan for every moment.">Desde los primeros años de tus hijos hasta el retiro — Fernando tiene el plan correcto para cada momento.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card gallery-card--large">
+          <img src="img-familia.jpg" alt="Familia latina protegida con seguro de salud" class="gallery-img" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-tag" data-es="Seguro Familiar" data-en="Family Insurance">Seguro Familiar</span>
+            <h3 data-es="Tu familia, protegida" data-en="Your family, protected">Tu familia, protegida</h3>
+            <p data-es="Planes ACA desde $0/mes para toda la familia." data-en="ACA plans from $0/month for the whole family.">Planes ACA desde $0/mes para toda la familia.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="img-medicare.jpg" alt="Pareja de adultos mayores con cobertura Medicare" class="gallery-img" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-tag" data-es="Medicare" data-en="Medicare">Medicare</span>
+            <h3 data-es="El retiro que mereces" data-en="The retirement you deserve">El retiro que mereces</h3>
+            <p data-es="Cobertura completa para mayores de 65 años." data-en="Full coverage for those 65+.">Cobertura completa para mayores de 65 años.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="img-dental.jpg" alt="Sonrisa saludable con seguro dental" class="gallery-img" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-tag" data-es="Dental" data-en="Dental">Dental</span>
+            <h3 data-es="Sonríe sin preocupaciones" data-en="Smile without worry">Sonríe sin preocupaciones</h3>
+            <p data-es="Planes dentales accesibles para toda la familia." data-en="Affordable dental plans for the whole family.">Planes dentales accesibles para toda la familia.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="img-vision.jpg" alt="Examen de visión con optometrista" class="gallery-img" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-tag" data-es="Visión" data-en="Vision">Visión</span>
+            <h3 data-es="Ve el mundo claramente" data-en="See the world clearly">Ve el mundo claramente</h3>
+            <p data-es="Exámenes y lentes cubiertos con tu plan de visión." data-en="Eye exams and glasses covered with your vision plan.">Exámenes y lentes cubiertos con tu plan de visión.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="gallery-cta">
+        <button class="btn btn-primary btn-lg" onclick="scrollToContact()">
+          <span data-es="Quiero un plan para mi familia →" data-en="I want a plan for my family →">Quiero un plan para mi familia →</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ═══ SERVICIOS ═══ -->
   <section class="section" id="servicios">
@@ -620,63 +676,6 @@
             </div>
           </form>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ GALERÍA ═══ -->
-  <section class="section section--soft" id="galeria">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow" data-es="Para Ti y Tu Familia" data-en="For You and Your Family">Para Ti y Tu Familia</p>
-        <h2 class="section-title" data-es="Protección para cada etapa de tu vida" data-en="Protection for every stage of your life">Protección para cada etapa de tu vida</h2>
-        <p class="section-desc" data-es="Desde los primeros años de tus hijos hasta el retiro — Fernando tiene el plan correcto para cada momento." data-en="From your children's early years to retirement — Fernando has the right plan for every moment.">Desde los primeros años de tus hijos hasta el retiro — Fernando tiene el plan correcto para cada momento.</p>
-      </div>
-
-      <div class="gallery-grid">
-
-        <div class="gallery-card gallery-card--large">
-          <img src="img-familia.jpg" alt="Familia latina protegida con seguro de salud" class="gallery-img" loading="lazy" />
-          <div class="gallery-overlay">
-            <span class="gallery-tag" data-es="Seguro Familiar" data-en="Family Insurance">Seguro Familiar</span>
-            <h3 data-es="Tu familia, protegida" data-en="Your family, protected">Tu familia, protegida</h3>
-            <p data-es="Planes ACA desde $0/mes para toda la familia." data-en="ACA plans from $0/month for the whole family.">Planes ACA desde $0/mes para toda la familia.</p>
-          </div>
-        </div>
-
-        <div class="gallery-card">
-          <img src="img-medicare.jpg" alt="Pareja de adultos mayores con cobertura Medicare" class="gallery-img" loading="lazy" />
-          <div class="gallery-overlay">
-            <span class="gallery-tag" data-es="Medicare" data-en="Medicare">Medicare</span>
-            <h3 data-es="El retiro que mereces" data-en="The retirement you deserve">El retiro que mereces</h3>
-            <p data-es="Cobertura completa para mayores de 65 años." data-en="Full coverage for those 65+.">Cobertura completa para mayores de 65 años.</p>
-          </div>
-        </div>
-
-        <div class="gallery-card">
-          <img src="img-dental.jpg" alt="Sonrisa saludable con seguro dental" class="gallery-img" loading="lazy" />
-          <div class="gallery-overlay">
-            <span class="gallery-tag" data-es="Dental" data-en="Dental">Dental</span>
-            <h3 data-es="Sonríe sin preocupaciones" data-en="Smile without worry">Sonríe sin preocupaciones</h3>
-            <p data-es="Planes dentales accesibles para toda la familia." data-en="Affordable dental plans for the whole family.">Planes dentales accesibles para toda la familia.</p>
-          </div>
-        </div>
-
-        <div class="gallery-card">
-          <img src="img-vision.jpg" alt="Examen de visión con optometrista" class="gallery-img" loading="lazy" />
-          <div class="gallery-overlay">
-            <span class="gallery-tag" data-es="Visión" data-en="Vision">Visión</span>
-            <h3 data-es="Ve el mundo claramente" data-en="See the world clearly">Ve el mundo claramente</h3>
-            <p data-es="Exámenes y lentes cubiertos con tu plan de visión." data-en="Eye exams and glasses covered with your vision plan.">Exámenes y lentes cubiertos con tu plan de visión.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="gallery-cta">
-        <button class="btn btn-primary btn-lg" onclick="scrollToContact()">
-          <span data-es="Quiero un plan para mi familia →" data-en="I want a plan for my family →">Quiero un plan para mi familia →</span>
-        </button>
       </div>
     </div>
   </section>
