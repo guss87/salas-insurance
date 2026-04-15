@@ -50,6 +50,63 @@
 </head>
 <body>
 
+  <!-- ═══ OPEN ENROLLMENT BANNER ═══ -->
+  <div class="oe-banner" id="oeBanner" role="alert" aria-live="polite" style="display:none">
+    <div class="oe-banner-inner container">
+
+      <!-- Modo: FUERA de Open Enrollment -->
+      <div class="oe-mode oe-mode--pre" id="oeModePreEl" style="display:none">
+        <div class="oe-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="oe-text">
+          <strong data-es="¡La Inscripción Abierta (ACA) comienza pronto!" data-en="Open Enrollment (ACA) is starting soon!">¡La Inscripción Abierta (ACA) comienza pronto!</strong>
+          <span data-es="Prepárate ahora — habla con Fernando antes de que empiecen las filas." data-en="Get ready now — talk to Fernando before the rush starts.">Prepárate ahora — habla con Fernando antes de que empiecen las filas.</span>
+        </div>
+        <div class="oe-countdown" id="oeCountdownPre" aria-label="Cuenta regresiva">
+          <div class="oe-unit"><span class="oe-num" id="preDays">--</span><span class="oe-label" data-es="días" data-en="days">días</span></div>
+          <div class="oe-sep">:</div>
+          <div class="oe-unit"><span class="oe-num" id="preHours">--</span><span class="oe-label" data-es="hrs" data-en="hrs">hrs</span></div>
+          <div class="oe-sep">:</div>
+          <div class="oe-unit"><span class="oe-num" id="preMins">--</span><span class="oe-label" data-es="min" data-en="min">min</span></div>
+        </div>
+        <button class="oe-cta" onclick="scrollToContact()">
+          <span data-es="Prepárate ya" data-en="Get ready now">Prepárate ya</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Modo: DENTRO de Open Enrollment -->
+      <div class="oe-mode oe-mode--active" id="oeModeActiveEl" style="display:none">
+        <div class="oe-pulse" aria-hidden="true"></div>
+        <div class="oe-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="oe-text">
+          <strong data-es="¡Inscripción Abierta ACTIVA — Termina el 15 de enero!" data-en="Open Enrollment ACTIVE — Ends January 15th!">¡Inscripción Abierta ACTIVA — Termina el 15 de enero!</strong>
+          <span data-es="No pierdas tu oportunidad de obtener cobertura desde $0/mes." data-en="Don't miss your chance to get coverage from $0/month.">No pierdas tu oportunidad de obtener cobertura desde $0/mes.</span>
+        </div>
+        <div class="oe-countdown oe-countdown--urgent" id="oeCountdownActive" aria-label="Tiempo restante">
+          <div class="oe-unit"><span class="oe-num" id="activeDays">--</span><span class="oe-label" data-es="días" data-en="days">días</span></div>
+          <div class="oe-sep">:</div>
+          <div class="oe-unit"><span class="oe-num" id="activeHours">--</span><span class="oe-label" data-es="hrs" data-en="hrs">hrs</span></div>
+          <div class="oe-sep">:</div>
+          <div class="oe-unit"><span class="oe-num" id="activeMins">--</span><span class="oe-label" data-es="min" data-en="min">min</span></div>
+          <div class="oe-sep">:</div>
+          <div class="oe-unit"><span class="oe-num" id="activeSecs">--</span><span class="oe-label" data-es="seg" data-en="sec">seg</span></div>
+        </div>
+        <button class="oe-cta oe-cta--urgent" onclick="scrollToContact()">
+          <span data-es="Inscríbete ahora" data-en="Enroll now">Inscríbete ahora</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <button class="oe-close" id="oeBannerClose" aria-label="Cerrar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
   <!-- ═══ HEADER ═══ -->
   <header class="header" id="header">
     <div class="header-inner container">

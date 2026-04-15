@@ -8,6 +8,102 @@
 // Instructions in: google-sheets-setup.md
 const SHEETS_WEBHOOK_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
 
+// ══════════════════════════════════════════════
+// OPEN ENROLLMENT BANNER
+// ══════════════════════════════════════════════
+(function initOEBanner() {
+  const banner       = document.getElementById('oeBanner');
+  const closeBtn     = document.getElementById('oeBannerClose');
+  const modePreEl    = document.getElementById('oeModePreEl');
+  const modeActiveEl = document.getElementById('oeModeActiveEl');
+
+  if (!banner) return;
+
+  // Si el usuario ya cerró el banner hoy, no mostrarlo
+  const dismissed = sessionStorage.getItem('oe_banner_dismissed');
+  if (dismissed) return;
+
+  const now   = new Date();
+  const month = now.getMonth() + 1; // 1-12
+  const day   = now.getDate();
+
+  // Open Enrollment: Nov 1 – Jan 15
+  const inOE = (month === 11) || (month === 12) || (month === 1 && day <= 15);
+
+  // Mostrar siempre (en OE y en pre-OE para preparación)
+  // Solo ocultar en Feb-Sep donde no hay urgencia real
+  // Para demo/prueba: mostramos siempre. Comentar la línea siguiente para produccion selectiva.
+  // const showBanner = inOE || month === 10; // Oct + OE
+  const showBanner = true; // Mostramos siempre para que Fernando vea el banner
+
+  if (!showBanner) return;
+
+  // Calcular la fecha objetivo
+  let targetDate;
+  if (inOE) {
+    // Countdown al cierre: 15 de enero del año en curso (o siguiente si ya pasó)
+    const year = (month === 1) ? now.getFullYear() : now.getFullYear() + 1;
+    targetDate = new Date(year, 0, 15, 23, 59, 59); // Jan 15
+  } else {
+    // Countdown al inicio: 1 de noviembre de este año (o siguiente)
+    const year = (month < 11) ? now.getFullYear() : now.getFullYear() + 1;
+    targetDate = new Date(year, 10, 1, 0, 0, 0); // Nov 1
+  }
+
+  // Activar modo correcto
+  if (inOE) {
+    modeActiveEl.style.display = 'flex';
+  } else {
+    modePreEl.style.display = 'flex';
+  }
+
+  banner.style.display = 'block';
+
+  // Función de tick
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const diff = targetDate - new Date();
+    if (diff <= 0) { banner.style.display = 'none'; return; }
+
+    const totalSecs  = Math.floor(diff / 1000);
+    const days       = Math.floor(totalSecs / 86400);
+    const hours      = Math.floor((totalSecs % 86400) / 3600);
+    const mins       = Math.floor((totalSecs % 3600) / 60);
+    const secs       = totalSecs % 60;
+
+    if (inOE) {
+      const el = (id) => document.getElementById(id);
+      if (el('activeDays'))  el('activeDays').textContent  = pad(days);
+      if (el('activeHours')) el('activeHours').textContent = pad(hours);
+      if (el('activeMins'))  el('activeMins').textContent  = pad(mins);
+      if (el('activeSecs'))  el('activeSecs').textContent  = pad(secs);
+    } else {
+      const el = (id) => document.getElementById(id);
+      if (el('preDays'))  el('preDays').textContent  = String(days);
+      if (el('preHours')) el('preHours').textContent = pad(hours);
+      if (el('preMins'))  el('preMins').textContent  = pad(mins);
+    }
+  }
+
+  tick();
+  setInterval(tick, 1000);
+
+  // Cerrar banner
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      banner.style.animation = 'none';
+      banner.style.transition = 'opacity 0.3s, max-height 0.4s';
+      banner.style.opacity = '0';
+      banner.style.maxHeight = '0';
+      banner.style.overflow = 'hidden';
+      banner.style.borderBottom = 'none';
+      setTimeout(() => { banner.style.display = 'none'; }, 400);
+      sessionStorage.setItem('oe_banner_dismissed', '1');
+    });
+  }
+})();
+
 // ── SCROLL TO CONTACT ──
 function scrollToContact() {
   document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
