@@ -225,6 +225,119 @@ if (form) {
 }
 
 // ══════════════════════════════════════════════
+// FORMULARIO DE REFERIDOS — EmailJS
+// ══════════════════════════════════════════════
+//
+// CONFIGURACIÓN — sigue estos pasos UNA sola vez:
+//   1. Ve a https://www.emailjs.com/ → crea cuenta gratis
+//   2. Add New Service → Gmail → conecta fernandosminsurance@gmail.com
+//   3. Copia tu SERVICE ID y pégalo abajo en EMAILJS_SERVICE_ID
+//   4. Email Templates → Create New Template → usa este asunto:
+//        "Nuevo referido de {{from_name}} — Salas Insurance"
+//      Cuerpo del email (puedes copiar y pegar):
+//        Quien refiere: {{from_name}} | Tel: {{from_phone}} | Email: {{from_email}}
+//        Referido: {{ref_name}} | Tel: {{ref_phone}} | Seguro: {{ref_seguro}}
+//   5. Copia el TEMPLATE ID y pégalo en EMAILJS_TEMPLATE_ID
+//   6. En Account → copia tu PUBLIC KEY y pégalo en EMAILJS_PUBLIC_KEY
+//
+const EMAILJS_SERVICE_ID  = 'PASTE_YOUR_SERVICE_ID';   // ej: service_abc123
+const EMAILJS_TEMPLATE_ID = 'PASTE_YOUR_TEMPLATE_ID';  // ej: template_xyz789
+const EMAILJS_PUBLIC_KEY  = 'PASTE_YOUR_PUBLIC_KEY';   // ej: user_AbCdEfGhIj
+
+const referralForm    = document.getElementById('referralForm');
+const referralSuccess = document.getElementById('referralSuccess');
+
+if (referralForm) {
+  // Init EmailJS solo si tiene credenciales reales
+  const emailjsReady = EMAILJS_PUBLIC_KEY !== 'PASTE_YOUR_PUBLIC_KEY';
+  if (emailjsReady && typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+
+  referralForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const miNombre = (referralForm.ref_mi_nombre?.value || '').trim();
+    const miTel    = (referralForm.ref_mi_tel?.value    || '').trim();
+    const miEmail  = (referralForm.ref_mi_email?.value  || '').trim();
+    const refNombre = (referralForm.ref_nombre?.value   || '').trim();
+    const refTel    = (referralForm.ref_tel?.value      || '').trim();
+    const refSeguro = referralForm.ref_seguro?.value    || 'No especificado';
+
+    // Validación
+    const required = [
+      { el: referralForm.ref_mi_nombre, val: miNombre },
+      { el: referralForm.ref_mi_tel,    val: miTel    },
+      { el: referralForm.ref_nombre,    val: refNombre },
+      { el: referralForm.ref_tel,       val: refTel   },
+    ];
+    let hasError = false;
+    required.forEach(({ el, val }) => {
+      if (!val && el) {
+        el.style.borderColor = '#e53e3e';
+        el.addEventListener('input', () => { el.style.borderColor = ''; }, { once: true });
+        hasError = true;
+      }
+    });
+    if (hasError) return;
+
+    // Botón loading
+    const submitBtn = referralForm.querySelector('.ref-submit');
+    const lang = currentLang;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      const span = submitBtn.querySelector('span');
+      if (span) span.textContent = lang === 'es' ? 'Enviando...' : 'Sending...';
+    }
+
+    // Datos del template
+    const templateParams = {
+      from_name:  miNombre,
+      from_phone: miTel,
+      from_email: miEmail || '(no proporcionado)',
+      ref_name:   refNombre,
+      ref_phone:  refTel,
+      ref_seguro: refSeguro,
+      to_email:   'fernandosminsurance@gmail.com',
+      timestamp:  new Date().toLocaleString('es-US', { timeZone: 'America/New_York' }),
+    };
+
+    if (emailjsReady && typeof emailjs !== 'undefined') {
+      try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      } catch (err) {
+        console.warn('EmailJS error:', err);
+        // Fallback: abrir correo con mailto
+      }
+    } else {
+      // Fallback mientras no esté configurado EmailJS: abre mailto
+      const body = [
+        `NUEVO REFERIDO — Salas Insurance`,
+        ``,
+        `👤 QUIEN REFIERE`,
+        `Nombre: ${miNombre}`,
+        `Teléfono: ${miTel}`,
+        miEmail ? `Email: ${miEmail}` : '',
+        ``,
+        `👥 REFERIDO`,
+        `Nombre: ${refNombre}`,
+        `Teléfono: ${refTel}`,
+        `Seguro de interés: ${refSeguro}`,
+        ``,
+        `Enviado desde: ${window.location.href}`,
+      ].filter(Boolean).join('\n');
+      window.open(`mailto:fernandosminsurance@gmail.com?subject=${encodeURIComponent('Nuevo referido de ' + miNombre + ' — Salas Insurance')}&body=${encodeURIComponent(body)}`);
+    }
+
+    // Mostrar éxito
+    referralForm.querySelector('.ref-cols').style.display = 'none';
+    referralForm.querySelector('.ref-form-footer').style.display = 'none';
+    referralSuccess.style.display = 'flex';
+  });
+}
+
+// ══════════════════════════════════════════════
 // FAQ ACCORDION
 // ══════════════════════════════════════════════
 document.querySelectorAll('.faq-question').forEach(btn => {
