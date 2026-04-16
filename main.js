@@ -476,3 +476,93 @@ revealEls.forEach((el, i) => {
   el.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
   revealObserver.observe(el);
 });
+
+// ══════════════════════════════════════════════
+// EXIT INTENT POPUP
+// ══════════════════════════════════════════════
+(function() {
+  const popup = document.getElementById('exitPopup');
+  const closeBtn = document.getElementById('exitPopupClose');
+  const form = document.getElementById('exitPopupForm');
+  if (!popup) return;
+
+  let shown = false;
+  const STORAGE_KEY = 'salas_exit_shown';
+
+  function showPopup() {
+    if (shown || sessionStorage.getItem(STORAGE_KEY)) return;
+    shown = true;
+    popup.style.display = 'flex';
+    requestAnimationFrame(() => popup.classList.add('is-visible'));
+    sessionStorage.setItem(STORAGE_KEY, '1');
+  }
+
+  function hidePopup() {
+    popup.classList.remove('is-visible');
+    setTimeout(() => { popup.style.display = 'none'; }, 300);
+  }
+
+  // Desktop: mouse leaves viewport upward
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY < 20) showPopup();
+  });
+
+  // Mobile: after 45s of inactivity show it
+  let mobileTimer;
+  function resetTimer() {
+    clearTimeout(mobileTimer);
+    mobileTimer = setTimeout(showPopup, 45000);
+  }
+  if (window.innerWidth < 768) {
+    ['touchstart','scroll'].forEach(ev => document.addEventListener(ev, resetTimer, { passive: true }));
+    resetTimer();
+  }
+
+  closeBtn.addEventListener('click', hidePopup);
+  popup.addEventListener('click', (e) => { if (e.target === popup) hidePopup(); });
+
+  // Submit — send to WhatsApp pre-filled or Google Sheets webhook
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombre = form.nombre.value.trim();
+    const tel = form.telefono.value.trim();
+    const msg = encodeURIComponent(`Hola Fernando, me llamo ${nombre} y quiero una cotización gratis. Mi teléfono: ${tel}`);
+    window.open(`https://wa.me/19293969920?text=${msg}`, '_blank');
+    hidePopup();
+  });
+})();
+
+// ══════════════════════════════════════════════
+// MAP TOOLTIP — Licensed states hover
+// ══════════════════════════════════════════════
+(function() {
+  const licensed = document.querySelectorAll('.state--licensed');
+  licensed.forEach(state => {
+    state.addEventListener('mouseenter', (e) => {
+      const name = state.getAttribute('data-name-es') || state.getAttribute('data-name-en') || '';
+      const tooltip = document.getElementById('mapTooltipText');
+      const bg = document.getElementById('mapTooltipBg');
+      if (!tooltip || !bg) return;
+      const svgEl = state.closest('svg');
+      const pt = svgEl.createSVGPoint();
+      const bbox = state.getBBox();
+      pt.x = bbox.x + bbox.width / 2;
+      pt.y = bbox.y - 10;
+      tooltip.textContent = `✓ ${name} — Licencia Activa`;
+      const tw = name.length * 7 + 50;
+      bg.setAttribute('x', pt.x - tw / 2);
+      bg.setAttribute('y', pt.y - 22);
+      bg.setAttribute('width', tw);
+      tooltip.setAttribute('x', pt.x);
+      tooltip.setAttribute('y', pt.y - 6);
+      bg.style.display = 'block';
+      tooltip.style.display = 'block';
+    });
+    state.addEventListener('mouseleave', () => {
+      const tooltip = document.getElementById('mapTooltipText');
+      const bg = document.getElementById('mapTooltipBg');
+      if (tooltip) tooltip.style.display = 'none';
+      if (bg) bg.style.display = 'none';
+    });
+  });
+})();
