@@ -1658,8 +1658,14 @@ textarea { resize: vertical; min-height: 80px; }
   .gallery-card--large { grid-column: 1; grid-row: auto; }
   .ref-cols { grid-template-columns: 1fr; }
   .ref-divider { width: auto; height: 1px; margin: 0; }
-  .ref-steps { flex-direction: column; align-items: flex-start; max-width: 360px; margin: 0 auto var(--space-12); }
-  .ref-step-arrow { transform: rotate(90deg); }
+  .ref-steps { flex-direction: row; align-items: flex-start; flex-wrap: nowrap; gap: var(--space-2); margin-bottom: var(--space-8); }
+  .ref-step { flex-direction: column; align-items: center; text-align: center; min-width: 0; max-width: none; gap: var(--space-2); }
+  .ref-step-icon { width: 36px; height: 36px; flex-shrink: 0; }
+  .ref-step-icon svg { width: 16px; height: 16px; }
+  .ref-step strong { font-size: 11px; }
+  .ref-step p { font-size: 10px; }
+  .ref-step-arrow { padding-top: 0; margin-top: var(--space-5); transform: none; opacity: 0.4; }
+  .ref-step-arrow svg { width: 14px; height: 14px; }
   .ref-form-wrap { padding: var(--space-6); }
   .ref-submit { min-width: 0; width: 100%; }
 }
