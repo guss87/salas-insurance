@@ -240,3 +240,24 @@ applyLanguage('es');
 updateSliderFill();
 updateAgeSliderFill();
 calcUpdate();
+
+// ── ANCHOR #medicos — activar pestaña si viene de index ──
+(function() {
+  function activateTab(toolName) {
+    document.querySelectorAll('.tools-tab').forEach(t => {
+      t.classList.remove('tools-tab--active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.tool-panel').forEach(p => p.style.display = 'none');
+    const tab = document.querySelector(`.tools-tab[data-tool="${toolName}"]`);
+    const panel = document.getElementById(`panel-${toolName}`);
+    if (tab) { tab.classList.add('tools-tab--active'); tab.setAttribute('aria-selected', 'true'); }
+    if (panel) {
+      panel.style.display = 'block';
+      setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+  }
+  if (window.location.hash === '#medicos') {
+    document.addEventListener('DOMContentLoaded', () => activateTab('medicos'));
+  }
+})();
