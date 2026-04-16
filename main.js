@@ -566,3 +566,16 @@ revealEls.forEach((el, i) => {
     });
   });
 })();
+
+// ══════════════════════════════════════════════
+// FAQ — SHOW MORE
+// ══════════════════════════════════════════════
+(function() {
+  const btn = document.getElementById('faqShowMore');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const hidden = document.querySelectorAll('.faq-item--hidden');
+    hidden.forEach(el => el.classList.add('is-visible'));
+    btn.style.display = 'none';
+  });
+})();
