@@ -456,26 +456,90 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// ── SCROLL REVEAL ──
-const revealEls = document.querySelectorAll(
-  '.service-card, .step, .testimonial-card, .why-feature, .carrier-logo, .why-photo-wrap, .doctor-card, .gallery-card, .referral-step, .faq-item'
+// ── HERO CANVAS ANIMATION (floating particles) ──
+(function initHeroCanvas() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const GOLD = [212, 160, 23];
+  const BLUE = [22, 45, 85];
+  particles = Array.from({ length: 42 }, () => ({
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    r: Math.random() * 2.5 + 0.8,
+    vx: (Math.random() - 0.5) * 0.012,
+    vy: (Math.random() - 0.5) * 0.012,
+    color: Math.random() > 0.5 ? GOLD : BLUE,
+    alpha: Math.random() * 0.5 + 0.15,
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = 100; if (p.x > 100) p.x = 0;
+      if (p.y < 0) p.y = 100; if (p.y > 100) p.y = 0;
+      const [r, g, b] = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x / 100 * W, p.y / 100 * H, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${r},${g},${b},${p.alpha})`;
+      ctx.fill();
+    });
+    // subtle connecting lines between nearby particles
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const a = particles[i], b = particles[j];
+        const dx = (a.x - b.x) / 100 * W, dy = (a.y - b.y) / 100 * H;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 90) {
+          ctx.beginPath();
+          ctx.moveTo(a.x / 100 * W, a.y / 100 * H);
+          ctx.lineTo(b.x / 100 * W, b.y / 100 * H);
+          ctx.strokeStyle = `rgba(212,160,23,${0.06 * (1 - dist / 90)})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── SCROLL REVEAL (mejorado) ──
+const revealItems = document.querySelectorAll(
+  '.service-card, .how-step, .testimonial-card, .why-feature, .why-photo-wrap, .gallery-card, .faq-item, .stat, .reveal-item'
 );
+const headerItems = document.querySelectorAll('.section-header');
+
+// Mark section headers for staggered reveal
+headerItems.forEach(el => el.classList.add('reveal-header'));
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('is-revealed');
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.08 });
+}, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
 
-revealEls.forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(22px)';
-  el.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
+// Stagger items within same parent
+revealItems.forEach((el, i) => {
+  el.classList.add('reveal-item');
+  el.style.transitionDelay = `${(i % 6) * 0.07}s`;
   revealObserver.observe(el);
 });
+headerItems.forEach(el => revealObserver.observe(el));
 
 // ══════════════════════════════════════════════
 // EXIT INTENT POPUP

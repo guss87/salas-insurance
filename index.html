@@ -111,7 +111,10 @@
   <header class="header" id="header">
     <div class="header-inner container">
       <a href="#inicio" class="logo" aria-label="Salas Insurance Group">
-        <img src="logo.png" alt="Salas Insurance Group" style="height:52px;width:auto;display:block;" />
+        <picture>
+          <source srcset="logo.webp" type="image/webp" />
+          <img src="logo.png" alt="Salas Insurance Group" style="height:52px;width:auto;display:block;" />
+        </picture>
       </a>
 
       <nav class="nav" id="nav" aria-label="Main navigation">
@@ -146,6 +149,8 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="hero" id="inicio">
+    <!-- Animated canvas background -->
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
     <div class="hero-bg-shapes" aria-hidden="true">
       <div class="shape shape-1"></div>
       <div class="shape shape-2"></div>
@@ -197,7 +202,10 @@
       <div class="hero-agent">
         <div class="agent-card">
           <div class="agent-photo-wrap">
+            <picture>
+            <source srcset="fernando-headshot.webp" type="image/webp" />
             <img src="fernando-headshot.jpg" alt="Fernando Salas — Insurance Agent" class="agent-photo" />
+          </picture>
           </div>
           <div class="agent-info">
             <div class="agent-verified" data-es="✓ Agente Certificado" data-en="✓ Certified Agent">
@@ -246,7 +254,10 @@
       <div class="gallery-grid gallery-grid--2col">
 
         <div class="gallery-card gallery-card--large">
-          <img src="img-familia.jpg" alt="Familia latina protegida con seguro de salud" class="gallery-img" loading="lazy" />
+          <picture>
+            <source srcset="img-familia.webp" type="image/webp" />
+            <img src="img-familia.jpg" alt="Familia latina protegida con seguro de salud" class="gallery-img" loading="lazy" />
+          </picture>
           <div class="gallery-overlay">
             <span class="gallery-tag" data-es="Seguro Familiar" data-en="Family Insurance">Seguro Familiar</span>
             <h3 data-es="Tu familia, protegida" data-en="Your family, protected">Tu familia, protegida</h3>
@@ -255,7 +266,10 @@
         </div>
 
         <div class="gallery-card gallery-card--large">
-          <img src="img-medicare.jpg" alt="Pareja de adultos mayores con cobertura Medicare" class="gallery-img" loading="lazy" />
+          <picture>
+            <source srcset="img-medicare.webp" type="image/webp" />
+            <img src="img-medicare.jpg" alt="Pareja de adultos mayores con cobertura Medicare" class="gallery-img" loading="lazy" />
+          </picture>
           <div class="gallery-overlay">
             <span class="gallery-tag" data-es="Medicare" data-en="Medicare">Medicare</span>
             <h3 data-es="El retiro que mereces" data-en="The retirement you deserve">El retiro que mereces</h3>
@@ -352,7 +366,10 @@
       <div class="why-grid">
         <div class="why-photo-col">
           <div class="why-photo-wrap">
-            <img src="fernando-hero.jpg" alt="Fernando Salas — Agente de Seguros" class="why-photo" />
+            <picture>
+            <source srcset="fernando-hero.webp" type="image/webp" />
+            <img src="fernando-hero.jpg" alt="Fernando Salas — Agente de Seguros" class="why-photo" loading="lazy" />
+          </picture>
             <div class="why-photo-badge">
               <div class="why-photo-badge-inner">
                 <strong data-es="Agente de Confianza" data-en="Trusted Agent">Agente de Confianza</strong>
@@ -486,6 +503,60 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CÓMO FUNCIONA ═══ -->
+  <section class="section section--soft" id="proceso">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-es="Simple y Rápido" data-en="Simple & Fast">Simple y Rápido</p>
+        <h2 class="section-title" data-es="Tu seguro en 3 pasos" data-en="Your insurance in 3 steps">Tu seguro en 3 pasos</h2>
+        <p class="section-desc" data-es="Sin filas, sin papeleo complicado. Fernando lo hace todo por ti." data-en="No lines, no complicated paperwork. Fernando does it all for you.">Sin filas, sin papeleo complicado. Fernando lo hace todo por ti.</p>
+      </div>
+      <div class="how-steps">
+
+        <div class="how-step reveal-item">
+          <div class="how-step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="how-step-num">01</div>
+          <h3 data-es="Nos contactas" data-en="Contact us">Nos contactas</h3>
+          <p data-es="WhatsApp, llamada o formulario. Respondemos en minutos, en español." data-en="WhatsApp, call or form. We respond in minutes, in English.">WhatsApp, llamada o formulario. Respondemos en minutos, en español.</p>
+          <div class="how-step-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="how-step reveal-item">
+          <div class="how-step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </div>
+          <div class="how-step-num">02</div>
+          <h3 data-es="Analizamos tu caso" data-en="We analyze your case">Analizamos tu caso</h3>
+          <p data-es="Evaluamos tus ingresos y necesidades para encontrar el plan ideal con el menor costo posible." data-en="We evaluate your income and needs to find the ideal plan at the lowest possible cost.">Evaluamos tus ingresos y necesidades para encontrar el plan ideal con el menor costo posible.</p>
+          <div class="how-step-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="how-step reveal-item">
+          <div class="how-step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="how-step-num">03</div>
+          <h3 data-es="Quedas protegido" data-en="You’re protected">Quedas protegido</h3>
+          <p data-es="Manejamos todo el papeleo y la inscripción. Cobertura activa en días. 100% gratis para ti." data-en="We handle all paperwork and enrollment. Coverage active in days. 100% free for you.">Manejamos todo el papeleo y la inscripción. Cobertura activa en días. 100% gratis para ti.</p>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:var(--space-10)">
+        <button class="btn btn-primary btn-lg" onclick="scrollToContact()">
+          <span data-es="Empieza ahora — es gratis →" data-en="Start now — it’s free →">Empieza ahora — es gratis →</span>
+        </button>
       </div>
     </div>
   </section>
@@ -902,25 +973,52 @@
     <span class="whatsapp-fab-label" data-es="¿Preguntas? Escríbenos" data-en="Questions? Chat with us">¿Preguntas? Escríbenos</span>
   </a>
 
-  <!-- ═══ EXIT INTENT POPUP ═══ -->
+  <!-- ═══ EXIT INTENT POPUP (mejorado) ═══ -->
   <div class="exit-popup-overlay" id="exitPopup" role="dialog" aria-modal="true" aria-label="Oferta especial" style="display:none">
-    <div class="exit-popup-card">
+    <div class="exit-popup-card exit-popup-card--v2">
       <button class="exit-popup-close" id="exitPopupClose" aria-label="Cerrar">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
-      <div class="exit-popup-icon">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+
+      <!-- Oferta badge -->
+      <div class="exit-popup-badge" data-es="📢 Antes de irte..." data-en="📢 Before you go...">📢 Antes de irte...</div>
+
+      <!-- Header con icono grande -->
+      <div class="exit-popup-hero">
+        <div class="exit-popup-shield">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10" stroke-width="2"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="exit-popup-title" data-es="¿Ya calificaste para\ncobertura desde $0/mes?" data-en="Did you check if you qualify\nfor $0/month coverage?">¿Ya calificaste para cobertura desde $0/mes?</h3>
+          <p class="exit-popup-sub" data-es="Muchos latinos en Florida califican para un plan gratuito. Fernando te dice en minutos." data-en="Many Latinos in Florida qualify for a free plan. Fernando tells you in minutes.">Muchos latinos en Florida califican para un plan gratuito. Fernando te dice en minutos.</p>
+        </div>
       </div>
-      <h3 class="exit-popup-title" data-es="¿Te vas sin tu cotización gratis?" data-en="Leaving without your free quote?">¿Te vas sin tu cotización gratis?</h3>
-      <p class="exit-popup-sub" data-es="Déjanos tu nombre y teléfono — Fernando te llama hoy sin costo ni compromiso." data-en="Leave your name and phone — Fernando calls you today, free and no obligation.">Déjanos tu nombre y teléfono — Fernando te llama hoy sin costo ni compromiso.</p>
+
+      <!-- Formulario rápido -->
       <form class="exit-popup-form" id="exitPopupForm">
-        <input type="text" name="nombre" placeholder="Tu nombre" data-es-placeholder="Tu nombre" data-en-placeholder="Your name" required class="exit-popup-input"/>
-        <input type="tel" name="telefono" placeholder="Tu teléfono" data-es-placeholder="Tu teléfono" data-en-placeholder="Your phone" required class="exit-popup-input"/>
-        <button type="submit" class="btn btn-primary exit-popup-btn">
-          <span data-es="Quiero mi cotización gratis" data-en="Get my free quote">Quiero mi cotización gratis</span>
+        <div class="exit-popup-inputs">
+          <input type="text" name="nombre" placeholder="Tu nombre" data-es-placeholder="Tu nombre" data-en-placeholder="Your name" required class="exit-popup-input"/>
+          <input type="tel" name="telefono" placeholder="(305) 000-0000" data-es-placeholder="(305) 000-0000" data-en-placeholder="(305) 000-0000" required class="exit-popup-input"/>
+        </div>
+        <button type="submit" class="btn btn-gold exit-popup-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          <span data-es="Enviar por WhatsApp (al instante)" data-en="Send via WhatsApp (instant)">Enviar por WhatsApp (al instante)</span>
         </button>
       </form>
-      <p class="exit-popup-disclaimer" data-es="100% gratis · Sin spam · Fernando te contacta en menos de 24h" data-en="100% free · No spam · Fernando contacts you within 24h">100% gratis · Sin spam · Fernando te contacta en menos de 24h</p>
+
+      <!-- Divider alternativo -->
+      <div class="exit-popup-or">
+        <span data-es="o llámanos ahora" data-en="or call us now">o llámanos ahora</span>
+      </div>
+      <a href="tel:+19293969920" class="exit-popup-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (929) 396-9920
+      </a>
+
+      <p class="exit-popup-disclaimer" data-es="🔒 Tu información es privada · Sin spam · 100% gratuito" data-en="🔒 Your info is private · No spam · 100% free">🔒 Tu información es privada · Sin spam · 100% gratuito</p>
     </div>
   </div>
 

@@ -73,6 +73,10 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           <span data-es="Calculadora ACA" data-en="ACA Calculator">Calculadora ACA</span>
         </button>
+        <button class="tools-tab" role="tab" data-tool="cotizador" aria-selected="false" data-desc-es="Ver planes ACA reales con precios y subsidios — en tiempo real." data-desc-en="View real ACA plans with prices and subsidies — in real time.">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span data-es="Cotizador Real" data-en="Live Quotes">Cotizador Real</span>
+        </button>
         <button class="tools-tab tools-tab--soon" role="tab" data-tool="auto" aria-selected="false" disabled data-desc-es="Próximamente: cotiza tu seguro de auto." data-desc-en="Coming soon: get your auto insurance quote.">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           <span data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</span>
@@ -102,6 +106,100 @@
   ══════════════════════════════════════ -->
   <main class="tools-content">
     <div class="container">
+
+      <!-- ── COTIZADOR REAL ── -->
+      <div class="tool-panel" id="panel-cotizador" role="tabpanel" style="display:none">
+        <div class="cotizador-layout">
+
+          <!-- Intro -->
+          <div class="cotizador-intro">
+            <div class="cotizador-badge" data-es="🌟 Powered by HealthSherpa" data-en="🌟 Powered by HealthSherpa">🌟 Powered by HealthSherpa</div>
+            <h2 data-es="Cotizador de Planes ACA — Real y Gratuito" data-en="ACA Plan Finder — Real & Free">Cotizador de Planes ACA — Real y Gratuito</h2>
+            <p data-es="Ve los planes reales disponibles en tu área, con precios exactos y subsidios aplicados según tus ingresos. Todos los datos son oficiales del Marketplace federal." data-en="See real plans available in your area, with exact prices and subsidies applied based on your income. All data is official from the federal Marketplace.">Ve los planes reales disponibles en tu área, con precios exactos y subsidios aplicados según tus ingresos. Todos los datos son oficiales del Marketplace federal.</p>
+          </div>
+
+          <!-- Steps -->
+          <div class="cotizador-steps">
+            <div class="cotizador-step">
+              <div class="cotizador-step-num">1</div>
+              <p data-es="Presiona el botón de abajo" data-en="Press the button below">Presiona el botón de abajo</p>
+            </div>
+            <div class="cotizador-arrow">→</div>
+            <div class="cotizador-step">
+              <div class="cotizador-step-num">2</div>
+              <p data-es="Ingresa tu código postal e ingresos" data-en="Enter your ZIP code and income">Ingresa tu código postal e ingresos</p>
+            </div>
+            <div class="cotizador-arrow">→</div>
+            <div class="cotizador-step">
+              <div class="cotizador-step-num">3</div>
+              <p data-es="Ve planes y precios reales" data-en="See real plans and prices">Ve planes y precios reales</p>
+            </div>
+          </div>
+
+          <!-- CTA principal -->
+          <div class="cotizador-cta-wrap">
+            <a href="https://www.healthsherpa.com/?_agent_id=fernando-salas" target="_blank" rel="noopener" class="btn btn-primary btn-lg cotizador-cta-btn" id="cotizadorLink">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span data-es="Ver Planes Disponibles para Mí" data-en="View Plans Available for Me">Ver Planes Disponibles para Mí</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <p class="cotizador-note" data-es="Abre el portal oficial de HealthSherpa en una nueva pestaña. 100% gratuito." data-en="Opens the official HealthSherpa portal in a new tab. 100% free.">Abre el portal oficial de HealthSherpa en una nueva pestaña. 100% gratuito.</p>
+          </div>
+
+          <!-- Info cards -->
+          <div class="cotizador-cards">
+            <div class="cotizador-card">
+              <div class="cotizador-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <h4 data-es="Precios Reales" data-en="Real Prices">Precios Reales</h4>
+              <p data-es="Datos directos del Marketplace federal. No estimaciones." data-en="Direct data from the federal Marketplace. No estimates.">Datos directos del Marketplace federal. No estimaciones.</p>
+            </div>
+            <div class="cotizador-card">
+              <div class="cotizador-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h4 data-es="Subsidios Aplicados" data-en="Subsidies Applied">Subsidios Aplicados</h4>
+              <p data-es="Ve el precio después del subsidio según tus ingresos." data-en="See the price after subsidy based on your income.">Ve el precio después del subsidio según tus ingresos.</p>
+            </div>
+            <div class="cotizador-card">
+              <div class="cotizador-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h4 data-es="En Minutos" data-en="In Minutes">En Minutos</h4>
+              <p data-es="Sin papeles, sin esperas. Compara planes en minutos." data-en="No paperwork, no waiting. Compare plans in minutes.">Sin papeles, sin esperas. Compara planes en minutos.</p>
+            </div>
+          </div>
+
+          <!-- Nota Fernando -->
+          <div class="cotizador-help-banner">
+            <div class="cotizador-help-avatar">
+              <picture>
+                <source srcset="fernando-headshot.webp" type="image/webp" />
+                <img src="fernando-headshot.jpg" alt="Fernando Salas" loading="lazy" />
+              </picture>
+            </div>
+            <div>
+              <strong data-es="¿Necesitas ayuda para elegir?" data-en="Need help choosing?">Need help choosing?</strong>
+              <p data-es="Una vez que veas los planes, llámame o escríbeme por WhatsApp. Te explico cuál es el mejor para ti en minutos, totalmente gratis." data-en="Once you see the plans, call me or message me on WhatsApp. I'll explain which is best for you in minutes, completely free.">Una vez que veas los planes, llámame o escríbeme por WhatsApp. Te explico cuál es el mejor para ti en minutos, totalmente gratis.</p>
+              <div class="cotizador-help-btns">
+                <a href="https://wa.me/19293969920?text=Hola%20Fernando%2C%20vi%20los%20planes%20en%20el%20cotizador%20y%20necesito%20ayuda%20para%20elegir" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                  WhatsApp
+                </a>
+                <a href="tel:+19293969920" class="btn btn-outline btn-sm">(929) 396-9920</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Setup note para Fernando -->
+          <div class="cotizador-setup-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <p><strong>Nota para Fernando:</strong> Para personalizar el link del cotizador con tu cuenta, crea tu perfil gratuito en <a href="https://www.healthsherpa.com" target="_blank">HealthSherpa.com</a>, ve a Marketing → Marketing Link y copia tu URL única. Luego ábrenos para actualizar este botón con tu link personal.</p>
+          </div>
+
+        </div>
+      </div>
 
       <!-- ── CALCULADORA ACA ── -->
       <div class="tool-panel tool-panel--active" id="panel-calculadora" role="tabpanel" style="display:none">

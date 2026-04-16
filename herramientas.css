@@ -463,3 +463,202 @@
 @media (min-width: 769px) {
   .tab-desc-bar { display: none; }
 }
+
+/* ══════════════════════════════════════════════
+   COTIZADOR REAL — HealthSherpa panel
+   ══════════════════════════════════════════════ */
+.cotizador-layout {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.cotizador-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+.cotizador-intro h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: var(--text-3xl);
+  color: var(--navy);
+  margin-bottom: var(--space-4);
+}
+.cotizador-intro p {
+  color: var(--text-muted);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+/* Steps row */
+.cotizador-steps {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+}
+.cotizador-step {
+  flex: 1;
+  text-align: center;
+}
+.cotizador-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold);
+  font-weight: 800;
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-2);
+}
+.cotizador-step p {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+}
+.cotizador-arrow {
+  color: var(--gold);
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* CTA button */
+.cotizador-cta-wrap {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+.cotizador-cta-btn {
+  font-size: var(--text-lg) !important;
+  padding: var(--space-5) var(--space-10) !important;
+  gap: var(--space-3) !important;
+  box-shadow: 0 8px 32px rgba(13,31,60,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.cotizador-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(13,31,60,0.28) !important;
+}
+.cotizador-note {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: var(--space-3);
+}
+
+/* Info cards */
+.cotizador-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+.cotizador-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  text-align: center;
+}
+.cotizador-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(13,31,60,0.05);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-3);
+}
+.cotizador-card h4 {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: var(--space-2);
+}
+.cotizador-card p {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Fernando help banner */
+.cotizador-help-banner {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+.cotizador-help-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--gold);
+}
+.cotizador-help-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cotizador-help-banner strong {
+  display: block;
+  color: var(--gold);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+}
+.cotizador-help-banner p {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.8);
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
+}
+.cotizador-help-btns {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* Setup note */
+.cotizador-setup-note {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  background: #fffbeb;
+  border: 1px solid #f0c040;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  color: #78530a;
+  font-size: var(--text-xs);
+}
+.cotizador-setup-note svg { flex-shrink: 0; margin-top: 2px; color: #d4a017; }
+.cotizador-setup-note p { margin: 0; line-height: 1.6; }
+.cotizador-setup-note a { color: var(--navy); font-weight: 600; }
+
+@media (max-width: 640px) {
+  .cotizador-cards { grid-template-columns: 1fr; }
+  .cotizador-steps { flex-direction: column; gap: var(--space-2); }
+  .cotizador-arrow { transform: rotate(90deg); }
+  .cotizador-help-banner { flex-direction: column; align-items: center; text-align: center; }
+  .cotizador-help-btns { justify-content: center; }
+}
