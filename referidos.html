@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programa de Referidos — Salas Insurance Group</title>
+  <meta name="description" content="Refiere amigos y familia a Salas Insurance Group. Formulario de referidos rápido y sencillo." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="herramientas.css" />
+</head>
+<body>
+
+  <!-- ── HEADER (igual al principal) ── -->
+  <header class="header header--scrolled" id="header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="Salas Insurance Group">
+        <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect width="42" height="42" rx="6" fill="#1B2A4A"/><text x="21" y="29" text-anchor="middle" font-family="serif" font-size="24" font-weight="700" fill="#C9A84C">S</text></svg>
+        <div class="logo-text">
+          <span class="logo-name">SALAS</span>
+          <span class="logo-sub">Insurance Group</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="index.html#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="index.html#aseguradoras" data-es="Aseguradoras" data-en="Carriers">Aseguradoras</a>
+        <a href="herramientas.html" class="nav-active" data-es="Herramientas" data-en="Tools">Herramientas</a>
+        <a href="index.html#referidos" data-es="Referidos" data-en="Referrals">Referidos</a>
+        <a href="index.html#faq" data-es="Preguntas" data-en="FAQ">Preguntas</a>
+        <a href="index.html#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+19293969920" class="btn btn-outline btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (929) 396-9920
+        </a>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-option lang-es active">🇪🇸 ES</span>
+          <span class="lang-sep">|</span>
+          <span class="lang-option lang-en">🇺🇸 EN</span>
+        </button>
+        <button class="btn btn-primary btn-sm" onclick="window.location.href='index.html#contacto'" data-es="Cotiza Gratis" data-en="Free Quote">Cotiza Gratis</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── PAGE HERO ── -->
+  
+  <!-- ═══ REFERIDOS HERO ═══ -->
+  <section class="tools-hero" style="padding: var(--space-16) 0 var(--space-10)">
+    <div class="container" style="text-align:center">
+      <p class="section-eyebrow" data-es="Programa de Referidos" data-en="Referral Program">Programa de Referidos</p>
+      <h1 class="tools-hero-title" data-es="Refiere y ayuda a quienes más quieres" data-en="Refer and help those you care about most">
+        Refiere y ayuda a <em>quienes más quieres</em>
+      </h1>
+      <p class="tools-hero-sub" data-es="Comparte el acceso a un seguro de salud de calidad con tu familia y amigos. El proceso es simple y 100% gratuito." data-en="Share access to quality health insurance with family and friends. The process is simple and 100% free.">
+        Comparte el acceso a un seguro de salud de calidad con tu familia y amigos. El proceso es simple y 100% gratuito.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ REFERIDOS CONTENT ═══ -->
+  <main style="padding: var(--space-10) 0 var(--space-20)">
+    <div class="container">
+<div id="referidos">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-eyebrow" data-es="Programa de Referidos" data-en="Referral Program">Programa de Referidos</p>
+        <h2 class="section-title" data-es="Refiere a alguien y <em>gana recompensas</em>" data-en="Refer someone and <em>earn rewards</em>">Refiere a alguien y <em>gana recompensas</em></h2>
+        <p class="section-desc" data-es="¿Conoces a alguien que necesite seguro? Llénanos este formulario y Fernando se pone en contacto con ellos directamente. Tú recibes un reconocimiento especial cuando se inscriban." data-en="Know someone who needs insurance? Fill out this form and Fernando will contact them directly. You receive a special reward when they enroll.">¿Conoces a alguien que necesite seguro? Llénanos este formulario y Fernando se pone en contacto con ellos directamente. Tú recibes un reconocimiento especial cuando se inscriban.</p>
+      </div>
+
+      <!-- Pasos horizontales -->
+      <div class="ref-steps">
+        <div class="ref-step">
+          <div class="ref-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <div>
+            <strong data-es="1. Llena el formulario" data-en="1. Fill out the form">1. Llena el formulario</strong>
+            <p data-es="Tus datos + los datos de tu referido" data-en="Your info + your referral's info">Tus datos + los datos de tu referido</p>
+          </div>
+        </div>
+        <div class="ref-step-arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="ref-step">
+          <div class="ref-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <strong data-es="2. Fernando recibe el correo" data-en="2. Fernando receives the email">2. Fernando recibe el correo</strong>
+            <p data-es="Se contacta con tu referido de inmediato" data-en="He contacts your referral right away">Se contacta con tu referido de inmediato</p>
+          </div>
+        </div>
+        <div class="ref-step-arrow" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="ref-step">
+          <div class="ref-step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <strong data-es="3. ¡Tú ganas!" data-en="3. You win!">3. ¡Tú ganas!</strong>
+            <p data-es="Cuando se inscribe, recibes tu recompensa" data-en="When they enroll, you receive your reward">Cuando se inscribe, recibes tu recompensa</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario de referido -->
+      <div class="ref-form-wrap">
+        <form id="referralForm" class="ref-form" novalidate>
+
+          <div class="ref-cols">
+
+            <!-- Columna izquierda: quien refiere -->
+            <div class="ref-col">
+              <div class="ref-col-header">
+                <div class="ref-step-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <h3 data-es="Tus datos" data-en="Your information">Tus datos</h3>
+              </div>
+              <div class="form-group">
+                <label data-es="Tu nombre completo *" data-en="Your full name *">Tu nombre completo *</label>
+                <input type="text" id="ref_mi_nombre" name="ref_mi_nombre" required
+                  data-es-placeholder="¿Cómo te llamas?" data-en-placeholder="What's your name?"
+                  placeholder="¿Cómo te llamas?" />
+              </div>
+              <div class="form-group">
+                <label data-es="Tu teléfono *" data-en="Your phone *">Tu teléfono *</label>
+                <input type="tel" id="ref_mi_tel" name="ref_mi_tel" required
+                  data-es-placeholder="(000) 000-0000" data-en-placeholder="(000) 000-0000"
+                  placeholder="(000) 000-0000" />
+              </div>
+              <div class="form-group">
+                <label data-es="Tu correo electrónico" data-en="Your email">Tu correo electrónico</label>
+                <input type="email" id="ref_mi_email" name="ref_mi_email"
+                  data-es-placeholder="Para confirmarte el referido" data-en-placeholder="To confirm your referral"
+                  placeholder="Para confirmarte el referido" />
+              </div>
+            </div>
+
+            <!-- Divisor -->
+            <div class="ref-divider" aria-hidden="true"></div>
+
+            <!-- Columna derecha: referido -->
+            <div class="ref-col">
+              <div class="ref-col-header">
+                <div class="ref-step-icon ref-step-icon--gold">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3 data-es="Datos del referido" data-en="Referral's information">Datos del referido</h3>
+              </div>
+              <div class="form-group">
+                <label data-es="Nombre del referido *" data-en="Referral's full name *">Nombre del referido *</label>
+                <input type="text" id="ref_nombre" name="ref_nombre" required
+                  data-es-placeholder="¿Cómo se llama?" data-en-placeholder="What's their name?"
+                  placeholder="¿Cómo se llama?" />
+              </div>
+              <div class="form-group">
+                <label data-es="Teléfono del referido *" data-en="Referral's phone *">Teléfono del referido *</label>
+                <input type="tel" id="ref_tel" name="ref_tel" required
+                  data-es-placeholder="(000) 000-0000" data-en-placeholder="(000) 000-0000"
+                  placeholder="(000) 000-0000" />
+              </div>
+              <div class="form-group">
+                <label data-es="¿Qué tipo de seguro necesita?" data-en="What type of insurance do they need?">¿Qué tipo de seguro necesita?</label>
+                <select id="ref_seguro" name="ref_seguro">
+                  <option value="" data-es="-- Selecciona --" data-en="-- Select --">-- Selecciona --</option>
+                  <option value="Salud / ACA" data-es="Salud / ACA (Obamacare)" data-en="Health / ACA (Obamacare)">Salud / ACA (Obamacare)</option>
+                  <option value="Medicare" data-es="Medicare" data-en="Medicare">Medicare</option>
+                  <option value="Vida" data-es="Póliza de Vida" data-en="Life Insurance">Póliza de Vida</option>
+                  <option value="Dental" data-es="Dental" data-en="Dental">Dental</option>
+                  <option value="Visión" data-es="Visión" data-en="Vision">Visión</option>
+                  <option value="No sabe" data-es="No sabe / Necesita orientación" data-en="Not sure / Needs guidance">No sabe / Necesita orientación</option>
+                </select>
+              </div>
+            </div>
+
+          </div><!-- /.ref-cols -->
+
+          <!-- Footer del formulario -->
+          <div class="ref-form-footer">
+            <button type="submit" class="btn btn-primary btn-lg ref-submit">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+              <span data-es="Enviar referido a Fernando" data-en="Send referral to Fernando">Enviar referido a Fernando</span>
+            </button>
+            <p class="form-disclaimer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span data-es="Tu información y la de tu referido son privadas y nunca serán compartidas." data-en="Your information and your referral's are private and will never be shared.">Tu información y la de tu referido son privadas y nunca serán compartidas.</span>
+            </p>
+          </div>
+
+          <!-- Éxito -->
+          <div class="ref-success" id="referralSuccess" style="display:none">
+            <div class="ref-success-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0D1F3C" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <strong data-es="¡Referido enviado!" data-en="Referral sent!">¡Referido enviado!</strong>
+            <p data-es="Fernando recibirá los datos y se pondrá en contacto con tu referido muy pronto. ¡Gracias por la confianza!" data-en="Fernando will receive the details and contact your referral very soon. Thank you for your trust!">Fernando recibirá los datos y se pondrá en contacto con tu referido muy pronto. ¡Gracias por la confianza!</p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ FAQ ═══ -->
+    </div>
+  </main>
+

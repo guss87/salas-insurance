@@ -65,13 +65,13 @@
   <div class="tools-tabs-wrap">
     <div class="container">
       <div class="tools-tabs" role="tablist">
-        <button class="tools-tab tools-tab--active" role="tab" data-tool="calculadora" aria-selected="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          <span data-es="Calculadora ACA" data-en="ACA Calculator">Calculadora ACA</span>
-        </button>
-        <button class="tools-tab" role="tab" data-tool="medicos" aria-selected="false">
+        <button class="tools-tab tools-tab--active" role="tab" data-tool="medicos" aria-selected="true">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span data-es="Buscar Médico" data-en="Find a Doctor">Buscar Médico</span>
+        </button>
+        <button class="tools-tab" role="tab" data-tool="calculadora" aria-selected="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span data-es="Calculadora ACA" data-en="ACA Calculator">Calculadora ACA</span>
         </button>
         <button class="tools-tab tools-tab--soon" role="tab" data-tool="auto" aria-selected="false" disabled>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
@@ -99,7 +99,7 @@
     <div class="container">
 
       <!-- ── CALCULADORA ACA ── -->
-      <div class="tool-panel tool-panel--active" id="panel-calculadora" role="tabpanel">
+      <div class="tool-panel tool-panel--active" id="panel-calculadora" role="tabpanel" style="display:none">
 
         <div class="calc-layout">
 
@@ -268,7 +268,7 @@
       </div><!-- /#panel-calculadora -->
 
       <!-- ── BUSCAR MÉDICO ── -->
-      <div class="tool-panel" id="panel-medicos" role="tabpanel" style="display:none">
+      <div class="tool-panel" id="panel-medicos" role="tabpanel">
         <div class="section-header" style="text-align:left;margin-bottom:var(--space-8)">
           <h2 data-es="Busca médicos en red cerca de ti" data-en="Find in-network doctors near you">Busca médicos en red cerca de ti</h2>
           <p class="section-desc" style="max-width:none" data-es="Selecciona tu aseguradora para buscar médicos, especialistas y hospitales en red." data-en="Select your carrier to find in-network doctors, specialists, and hospitals.">Selecciona tu aseguradora para buscar médicos, especialistas y hospitales en red.</p>
