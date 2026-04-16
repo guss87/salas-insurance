@@ -261,3 +261,32 @@ calcUpdate();
     document.addEventListener('DOMContentLoaded', () => activateTab('medicos'));
   }
 })();
+
+// ── TAB DESCRIPTION BAR — update on tab click ──
+(function() {
+  const descBar = document.getElementById('tabDescText');
+  if (!descBar) return;
+
+  function updateDesc(tab) {
+    const lang = document.documentElement.getAttribute('data-lang') || 'es';
+    const desc = lang === 'en'
+      ? tab.getAttribute('data-desc-en')
+      : tab.getAttribute('data-desc-es');
+    if (desc) {
+      descBar.style.opacity = '0';
+      setTimeout(() => {
+        descBar.textContent = desc;
+        descBar.style.opacity = '1';
+      }, 150);
+    }
+  }
+
+  // Set initial desc from active tab
+  const activeTab = document.querySelector('.tools-tab--active');
+  if (activeTab) updateDesc(activeTab);
+
+  // Update on click
+  document.querySelectorAll('.tools-tab').forEach(tab => {
+    tab.addEventListener('click', () => updateDesc(tab));
+  });
+})();

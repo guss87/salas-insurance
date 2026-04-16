@@ -65,30 +65,35 @@
   <div class="tools-tabs-wrap">
     <div class="container">
       <div class="tools-tabs" role="tablist">
-        <button class="tools-tab tools-tab--active" role="tab" data-tool="medicos" aria-selected="true">
+        <button class="tools-tab tools-tab--active" role="tab" data-tool="medicos" aria-selected="true" data-desc-es="Encuentra médicos en red por aseguradora y código postal." data-desc-en="Find in-network doctors by carrier and ZIP code.">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span data-es="Buscar Médico" data-en="Find a Doctor">Buscar Médico</span>
         </button>
-        <button class="tools-tab" role="tab" data-tool="calculadora" aria-selected="false">
+        <button class="tools-tab" role="tab" data-tool="calculadora" aria-selected="false" data-desc-es="Estima tu subsidio ACA según ingresos y tamaño de familia." data-desc-en="Estimate your ACA subsidy based on income and family size.">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           <span data-es="Calculadora ACA" data-en="ACA Calculator">Calculadora ACA</span>
         </button>
-        <button class="tools-tab tools-tab--soon" role="tab" data-tool="auto" aria-selected="false" disabled>
+        <button class="tools-tab tools-tab--soon" role="tab" data-tool="auto" aria-selected="false" disabled data-desc-es="Próximamente: cotiza tu seguro de auto." data-desc-en="Coming soon: get your auto insurance quote.">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           <span data-es="Seguro de Auto" data-en="Auto Insurance">Seguro de Auto</span>
           <span class="tools-tab-badge" data-es="Próximamente" data-en="Coming soon">Próximamente</span>
         </button>
-        <button class="tools-tab tools-tab--soon" role="tab" data-tool="casa" aria-selected="false" disabled>
+        <button class="tools-tab tools-tab--soon" role="tab" data-tool="casa" aria-selected="false" disabled data-desc-es="Próximamente: seguro para tu hogar." data-desc-en="Coming soon: home insurance.">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           <span data-es="Seguro de Casa" data-en="Home Insurance">Seguro de Casa</span>
           <span class="tools-tab-badge" data-es="Próximamente" data-en="Coming soon">Próximamente</span>
         </button>
-        <button class="tools-tab tools-tab--soon" role="tab" data-tool="bote" aria-selected="false" disabled>
+        <button class="tools-tab tools-tab--soon" role="tab" data-tool="bote" aria-selected="false" disabled data-desc-es="Próximamente: seguro para tu embarcación." data-desc-en="Coming soon: boat insurance.">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2M2 20l4-12h12l4 12"/><path d="M12 2v6"/><path d="M8 8h8"/></svg>
           <span data-es="Seguro de Bote" data-en="Boat Insurance">Seguro de Bote</span>
           <span class="tools-tab-badge" data-es="Próximamente" data-en="Coming soon">Próximamente</span>
         </button>
       </div>
+    </div>
+
+    <!-- Tab description tooltip -->
+    <div class="tab-desc-bar" id="tabDescBar">
+      <span class="tab-desc-text" id="tabDescText">Encuentra médicos en red por aseguradora y código postal.</span>
     </div>
   </div>
 
