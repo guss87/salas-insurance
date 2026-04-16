@@ -20,7 +20,7 @@ const SHEETS_WEBHOOK_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
   if (!banner) return;
 
   // Si el usuario ya cerró el banner hoy, no mostrarlo
-  const dismissed = sessionStorage.getItem('oe_banner_dismissed');
+  const dismissed = window._oeBannerDismissed;
   if (dismissed) return;
 
   const now   = new Date();
@@ -99,7 +99,7 @@ const SHEETS_WEBHOOK_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
       banner.style.overflow = 'hidden';
       banner.style.borderBottom = 'none';
       setTimeout(() => { banner.style.display = 'none'; }, 400);
-      sessionStorage.setItem('oe_banner_dismissed', '1');
+      window._oeBannerDismissed = true;
     });
   }
 })();
@@ -490,11 +490,11 @@ revealEls.forEach((el, i) => {
   const STORAGE_KEY = 'salas_exit_shown';
 
   function showPopup() {
-    if (shown || sessionStorage.getItem(STORAGE_KEY)) return;
+    if (shown || window._exitShown) return;
     shown = true;
     popup.style.display = 'flex';
     requestAnimationFrame(() => popup.classList.add('is-visible'));
-    sessionStorage.setItem(STORAGE_KEY, '1');
+    window._exitShown = true;
   }
 
   function hidePopup() {
