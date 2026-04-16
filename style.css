@@ -1,19 +1,19 @@
 /* ═══════════════════════════════════════════════════════════
    SALAS INSURANCE GROUP — style.css
-   Palette: Navy #1B2A4A + Gold #C9A84C + White
+   Palette: Navy #0D1F3C + Gold #D4A017 — Branding v2
    ═══════════════════════════════════════════════════════════ */
 
 /* ── TOKENS ── */
 :root {
-  /* Brand */
-  --navy: #1B2A4A;
-  --navy-dark: #0f1d35;
-  --navy-light: #243562;
-  --gold: #C9A84C;
-  --gold-light: #e0c070;
-  --gold-dark: #a88630;
+  /* Brand v2 */
+  --navy: #0D1F3C;
+  --navy-dark: #080E18;
+  --navy-light: #162D55;
+  --gold: #D4A017;
+  --gold-light: #F0C040;
+  --gold-dark: #A07810;
   --white: #ffffff;
-  --off-white: #f8f7f4;
+  --off-white: #F7F5F0;
 
   /* Text */
   --color-text: #1a1a2e;
@@ -61,9 +61,9 @@
   --radius-xl: 1.5rem;
   --radius-full: 9999px;
   --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-sm: 0 1px 3px rgba(27,42,74,0.08);
-  --shadow-md: 0 4px 16px rgba(27,42,74,0.12);
-  --shadow-lg: 0 12px 40px rgba(27,42,74,0.18);
+  --shadow-sm: 0 1px 3px rgba(13,31,60,0.10);
+  --shadow-md: 0 4px 16px rgba(13,31,60,0.15);
+  --shadow-lg: 0 12px 40px rgba(13,31,60,0.22);
   --content-max: 1160px;
 }
 
