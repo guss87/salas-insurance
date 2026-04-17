@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias! – Salas Insurance Group</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Meta Pixel — evento Lead -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PASTE_YOUR_PIXEL_ID_HERE');
+    fbq('track', 'Lead');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: var(--navy-dark, #080E18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+    }
+    .gracias-card {
+      background: #0D1F3C;
+      border: 1px solid rgba(212,160,23,0.2);
+      border-radius: 24px;
+      padding: 56px 48px;
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .gracias-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0D1F3C, #162D55);
+      border: 3px solid #D4A017;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      animation: pop 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .gracias-icon svg { color: #D4A017; }
+    .gracias-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #D4A017;
+      margin-bottom: 12px;
+    }
+    .gracias-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .gracias-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+    .gracias-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+    .gracias-step {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+    .gracias-step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #D4A017;
+      color: #080E18;
+      font-weight: 800;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .gracias-step p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.4;
+    }
+    .gracias-step strong { color: #fff; display: block; }
+    .gracias-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 16px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-wa:hover { opacity: 0.9; }
+    .btn-back {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
+      border: 1.5px solid rgba(212,160,23,0.4);
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+      padding: 14px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-back:hover { border-color: #D4A017; color: #fff; }
+    .gracias-footer {
+      margin-top: 32px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+    @media (max-width: 480px) {
+      .gracias-card { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gracias-card">
+
+    <!-- Icono animado -->
+    <div class="gracias-icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <polyline points="9 12 11 14 15 10" stroke-width="2.2"/>
+      </svg>
+    </div>
+
+    <p class="gracias-eyebrow" id="eyebrow">Mensaje recibido</p>
+    <h1 class="gracias-title" id="title">¡Gracias por contactarnos!</h1>
+    <p class="gracias-sub" id="sub">Fernando Salas revisará tu solicitud y te contactará <strong>en menos de 24 horas</strong> para ayudarte a encontrar el mejor plan de salud.</p>
+
+    <!-- Próximos pasos -->
+    <div class="gracias-steps">
+      <div class="gracias-step">
+        <div class="gracias-step-num">1</div>
+        <p><strong id="step1-title">Fernando recibe tu mensaje</strong><span id="step1-sub">Ya está notificado y listo para ayudarte.</span></p>
+      </div>
+      <div class="gracias-step">
+        <div class="gracias-step-num">2</div>
+        <p><strong id="step2-title">Te contacta hoy</strong><span id="step2-sub">Por llamada o WhatsApp, según tu preferencia.</span></p>
+      </div>
+      <div class="gracias-step">
+        <div class="gracias-step-num">3</div>
+        <p><strong id="step3-title">Quedas protegido</strong><span id="step3-sub">Sin costo ni compromiso. 100% gratis para ti.</span></p>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="gracias-btns">
+      <a href="https://wa.me/19293969920?text=Hola%20Fernando%2C%20acabo%20de%20llenar%20el%20formulario%20en%20tu%20sitio%20web" target="_blank" rel="noopener" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        <span id="wa-btn">Escríbeme por WhatsApp ahora</span>
+      </a>
+      <a href="index.html" class="btn-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg>
+        <span id="back-btn">Volver al inicio</span>
+      </a>
+    </div>
+
+    <p class="gracias-footer" id="footer-note">Salas Insurance Group · (929) 396-9920 · @salasinsurancegroup</p>
+  </div>
+
+  <script>
+    // Bilingual support
+    const translations = {
+      en: {
+        eyebrow: 'Message received',
+        title: 'Thank you for contacting us!',
+        sub: 'Fernando Salas will review your request and contact you <strong>within 24 hours</strong> to help you find the best health plan.',
+        step1Title: 'Fernando receives your message',
+        step1Sub: 'He\'s already notified and ready to help.',
+        step2Title: 'He contacts you today',
+        step2Sub: 'By call or WhatsApp, per your preference.',
+        step3Title: 'You\'re protected',
+        step3Sub: 'No cost, no commitment. 100% free for you.',
+        waBtn: 'Message me on WhatsApp now',
+        backBtn: 'Back to home',
+        footerNote: 'Salas Insurance Group · (929) 396-9920 · @salasinsurancegroup'
+      }
+    };
+    const lang = new URLSearchParams(window.location.search).get('lang') ||
+                 localStorage.getItem('salas_lang') || 'es';
+    if (lang === 'en' && translations.en) {
+      const t = translations.en;
+      document.getElementById('eyebrow').textContent = t.eyebrow;
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('sub').innerHTML = t.sub;
+      document.getElementById('step1-title').textContent = t.step1Title;
+      document.getElementById('step1-sub').textContent = t.step1Sub;
+      document.getElementById('step2-title').textContent = t.step2Title;
+      document.getElementById('step2-sub').textContent = t.step2Sub;
+      document.getElementById('step3-title').textContent = t.step3Title;
+      document.getElementById('step3-sub').textContent = t.step3Sub;
+      document.getElementById('wa-btn').textContent = t.waBtn;
+      document.getElementById('back-btn').textContent = t.backBtn;
+      document.getElementById('footer-note').textContent = t.footerNote;
+      document.documentElement.lang = 'en';
+    }
+
+    // Auto-redirect after 60s
+    setTimeout(() => { window.location.href = 'index.html'; }, 60000);
+  </script>
+
+</body>
+</html>

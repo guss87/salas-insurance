@@ -313,10 +313,14 @@ if (form) {
       }
     } catch (_) {}
 
-    // ── SHOW SUCCESS + OPEN WHATSAPP ──
+    // ── SHOW SUCCESS + OPEN WHATSAPP + REDIRECT ──
     form.style.display = 'none';
     successMsg.style.display = 'block';
     setTimeout(() => { window.open(waUrl, '_blank'); }, 400);
+    // Redirect to gracias page after 1.5s
+    setTimeout(() => {
+      window.location.href = `gracias.html?lang=${langPref}`;
+    }, 1500);
   });
 }
 
