@@ -342,11 +342,10 @@ em { font-style: italic; color: var(--gold); }
 }
 .agent-photo {
   width: 100%;
-  height: 160%;  /* muestra solo el tercio superior (cara) de la foto full-body */
+  height: 100%;
   object-fit: cover;
-  object-position: center 8%;
+  object-position: center 12%;
   border-radius: 50%;
-  margin-top: -30%;
 }
 .agent-verified {
   display: inline-flex;
