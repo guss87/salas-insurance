@@ -1,8 +1,3 @@
 User-agent: *
 Allow: /
-
-# No indexar página de confirmación
-Disallow: /gracias.html
-
-# Sitemap
-Sitemap: https://guss87.github.io/salas-insurance/sitemap.xml
+Sitemap: https://seguros-group.com/sitemap.xml
